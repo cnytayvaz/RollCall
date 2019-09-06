@@ -23,11 +23,11 @@
 		110C293923222E9F0015C299 /* LoginViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 110C293723222E9F0015C299 /* LoginViewController.xib */; };
 		110C293B23222F0D0015C299 /* TabBarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 110C293A23222F0D0015C299 /* TabBarController.swift */; };
 		110C293D23222F510015C299 /* ExtensionUIColor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 110C293C23222F510015C299 /* ExtensionUIColor.swift */; };
-		91A5071D2644A70AC12C41EF /* Pods_RollCall.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1E5EFBB3F0F9E38C7EA37872 /* Pods_RollCall.framework */; };
+		FEDE045F92FDB77D9E651CBF /* Pods_BaseProject.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 35D6453B2F5DAC9A6C6080B9 /* Pods_BaseProject.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
-		11053C3B2320E59400D62C03 /* ProjectBase.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ProjectBase.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		11053C3B2320E59400D62C03 /* BaseProject.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = BaseProject.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		11053C3E2320E59400D62C03 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		11053C452320E59500D62C03 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		11053C4A2320E59500D62C03 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -46,7 +46,9 @@
 		110C293723222E9F0015C299 /* LoginViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = LoginViewController.xib; sourceTree = "<group>"; };
 		110C293A23222F0D0015C299 /* TabBarController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabBarController.swift; sourceTree = "<group>"; };
 		110C293C23222F510015C299 /* ExtensionUIColor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExtensionUIColor.swift; sourceTree = "<group>"; };
-		1E5EFBB3F0F9E38C7EA37872 /* Pods_RollCall.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_RollCall.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		220813308A7A5C8CF0226751 /* Pods-BaseProject.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-BaseProject.release.xcconfig"; path = "Target Support Files/Pods-BaseProject/Pods-BaseProject.release.xcconfig"; sourceTree = "<group>"; };
+		35D6453B2F5DAC9A6C6080B9 /* Pods_BaseProject.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_BaseProject.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		4135B8F8581E6CDA3F8BDB86 /* Pods-BaseProject.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-BaseProject.debug.xcconfig"; path = "Target Support Files/Pods-BaseProject/Pods-BaseProject.debug.xcconfig"; sourceTree = "<group>"; };
 		7CAD14F677B86D49C078F85F /* Pods-RollCall.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-RollCall.debug.xcconfig"; path = "Target Support Files/Pods-RollCall/Pods-RollCall.debug.xcconfig"; sourceTree = "<group>"; };
 		F09DD9373967DB712E7B44F8 /* Pods-RollCall.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-RollCall.release.xcconfig"; path = "Target Support Files/Pods-RollCall/Pods-RollCall.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -56,7 +58,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				91A5071D2644A70AC12C41EF /* Pods_RollCall.framework in Frameworks */,
+				FEDE045F92FDB77D9E651CBF /* Pods_BaseProject.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -66,7 +68,7 @@
 		11053C322320E59400D62C03 = {
 			isa = PBXGroup;
 			children = (
-				11053C3D2320E59400D62C03 /* ProjectBase */,
+				11053C3D2320E59400D62C03 /* BaseProject */,
 				11053C3C2320E59400D62C03 /* Products */,
 				A6BBDF9BE21518FACB520711 /* Pods */,
 				DAD8EEEC5AF5EEFC1E872F4B /* Frameworks */,
@@ -76,12 +78,12 @@
 		11053C3C2320E59400D62C03 /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				11053C3B2320E59400D62C03 /* ProjectBase.app */,
+				11053C3B2320E59400D62C03 /* BaseProject.app */,
 			);
 			name = Products;
 			sourceTree = "<group>";
 		};
-		11053C3D2320E59400D62C03 /* ProjectBase */ = {
+		11053C3D2320E59400D62C03 /* BaseProject */ = {
 			isa = PBXGroup;
 			children = (
 				11053C4A2320E59500D62C03 /* Info.plist */,
@@ -95,7 +97,7 @@
 				11053C5B2320EF7E00D62C03 /* Util */,
 				110C293E232235190015C299 /* Login */,
 			);
-			path = ProjectBase;
+			path = BaseProject;
 			sourceTree = "<group>";
 		};
 		11053C5A2320EF6C00D62C03 /* Extension */ = {
@@ -150,6 +152,8 @@
 			children = (
 				7CAD14F677B86D49C078F85F /* Pods-RollCall.debug.xcconfig */,
 				F09DD9373967DB712E7B44F8 /* Pods-RollCall.release.xcconfig */,
+				4135B8F8581E6CDA3F8BDB86 /* Pods-BaseProject.debug.xcconfig */,
+				220813308A7A5C8CF0226751 /* Pods-BaseProject.release.xcconfig */,
 			);
 			path = Pods;
 			sourceTree = "<group>";
@@ -157,7 +161,7 @@
 		DAD8EEEC5AF5EEFC1E872F4B /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
-				1E5EFBB3F0F9E38C7EA37872 /* Pods_RollCall.framework */,
+				35D6453B2F5DAC9A6C6080B9 /* Pods_BaseProject.framework */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -165,23 +169,23 @@
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
-		11053C3A2320E59400D62C03 /* ProjectBase */ = {
+		11053C3A2320E59400D62C03 /* BaseProject */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 11053C4D2320E59500D62C03 /* Build configuration list for PBXNativeTarget "ProjectBase" */;
+			buildConfigurationList = 11053C4D2320E59500D62C03 /* Build configuration list for PBXNativeTarget "BaseProject" */;
 			buildPhases = (
 				C9F0F15719B62B2383E4B0D5 /* [CP] Check Pods Manifest.lock */,
 				11053C372320E59400D62C03 /* Sources */,
 				11053C382320E59400D62C03 /* Frameworks */,
 				11053C392320E59400D62C03 /* Resources */,
-				84F429F6D4D7168F3DDFED11 /* [CP] Embed Pods Frameworks */,
+				CB7A319D9A59649A3C93B3DB /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
 			dependencies = (
 			);
-			name = ProjectBase;
+			name = BaseProject;
 			productName = RollCall;
-			productReference = 11053C3B2320E59400D62C03 /* ProjectBase.app */;
+			productReference = 11053C3B2320E59400D62C03 /* BaseProject.app */;
 			productType = "com.apple.product-type.application";
 		};
 /* End PBXNativeTarget section */
@@ -199,7 +203,7 @@
 					};
 				};
 			};
-			buildConfigurationList = 11053C362320E59400D62C03 /* Build configuration list for PBXProject "ProjectBase" */;
+			buildConfigurationList = 11053C362320E59400D62C03 /* Build configuration list for PBXProject "BaseProject" */;
 			compatibilityVersion = "Xcode 9.3";
 			developmentRegion = en;
 			hasScannedForEncodings = 0;
@@ -213,7 +217,7 @@
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
-				11053C3A2320E59400D62C03 /* ProjectBase */,
+				11053C3A2320E59400D62C03 /* BaseProject */,
 			);
 		};
 /* End PBXProject section */
@@ -232,23 +236,6 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXShellScriptBuildPhase section */
-		84F429F6D4D7168F3DDFED11 /* [CP] Embed Pods Frameworks */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputFileListPaths = (
-				"${PODS_ROOT}/Target Support Files/Pods-RollCall/Pods-RollCall-frameworks-${CONFIGURATION}-input-files.xcfilelist",
-			);
-			name = "[CP] Embed Pods Frameworks";
-			outputFileListPaths = (
-				"${PODS_ROOT}/Target Support Files/Pods-RollCall/Pods-RollCall-frameworks-${CONFIGURATION}-output-files.xcfilelist",
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-RollCall/Pods-RollCall-frameworks.sh\"\n";
-			showEnvVarsInLog = 0;
-		};
 		C9F0F15719B62B2383E4B0D5 /* [CP] Check Pods Manifest.lock */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
@@ -264,11 +251,28 @@
 			outputFileListPaths = (
 			);
 			outputPaths = (
-				"$(DERIVED_FILE_DIR)/Pods-RollCall-checkManifestLockResult.txt",
+				"$(DERIVED_FILE_DIR)/Pods-BaseProject-checkManifestLockResult.txt",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
 			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		CB7A319D9A59649A3C93B3DB /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-BaseProject/Pods-BaseProject-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-BaseProject/Pods-BaseProject-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-BaseProject/Pods-BaseProject-frameworks.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
 /* End PBXShellScriptBuildPhase section */
@@ -429,16 +433,16 @@
 		};
 		11053C4E2320E59500D62C03 /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 7CAD14F677B86D49C078F85F /* Pods-RollCall.debug.xcconfig */;
+			baseConfigurationReference = 4135B8F8581E6CDA3F8BDB86 /* Pods-BaseProject.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
-				INFOPLIST_FILE = ProjectBase/Info.plist;
+				INFOPLIST_FILE = BaseProject/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = cuneytayvaz.ProjectBase;
+				PRODUCT_BUNDLE_IDENTIFIER = cuneytayvaz.BaseProject;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -447,16 +451,16 @@
 		};
 		11053C4F2320E59500D62C03 /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = F09DD9373967DB712E7B44F8 /* Pods-RollCall.release.xcconfig */;
+			baseConfigurationReference = 220813308A7A5C8CF0226751 /* Pods-BaseProject.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
-				INFOPLIST_FILE = ProjectBase/Info.plist;
+				INFOPLIST_FILE = BaseProject/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = cuneytayvaz.ProjectBase;
+				PRODUCT_BUNDLE_IDENTIFIER = cuneytayvaz.BaseProject;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -466,7 +470,7 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
-		11053C362320E59400D62C03 /* Build configuration list for PBXProject "ProjectBase" */ = {
+		11053C362320E59400D62C03 /* Build configuration list for PBXProject "BaseProject" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				11053C4B2320E59500D62C03 /* Debug */,
@@ -475,7 +479,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		11053C4D2320E59500D62C03 /* Build configuration list for PBXNativeTarget "ProjectBase" */ = {
+		11053C4D2320E59500D62C03 /* Build configuration list for PBXNativeTarget "BaseProject" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				11053C4E2320E59500D62C03 /* Debug */,
