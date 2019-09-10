@@ -31,7 +31,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         
         window = UIWindow(frame: UIScreen.main.bounds)
         let initialViewController = LoginViewController()
-        self.window?.rootViewController = initialViewController
+        self.window?.rootViewController = Util.createNavigationcontroller(viewController: initialViewController)
         self.window?.makeKeyAndVisible()
         
         return true

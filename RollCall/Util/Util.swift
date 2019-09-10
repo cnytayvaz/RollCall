@@ -7,3 +7,13 @@
 //
 
 import Foundation
+import UIKit
+
+class Util {
+    
+    static func createNavigationcontroller(viewController: UIViewController) -> UINavigationController {
+        let vc = UINavigationController(rootViewController: viewController)
+        return vc
+    }
+    
+}

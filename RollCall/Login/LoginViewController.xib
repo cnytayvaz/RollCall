@@ -12,6 +12,8 @@
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="LoginViewController" customModule="RollCall" customModuleProvider="target">
             <connections>
+                <outlet property="passwordTextField" destination="UBm-fb-YC3" id="XLY-xr-ze5"/>
+                <outlet property="tcKNTextField" destination="3X6-bA-Ldo" id="ckX-rr-h9m"/>
                 <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
             </connections>
         </placeholder>
@@ -19,8 +21,61 @@
         <view clearsContextBeforeDrawing="NO" contentMode="scaleToFill" id="i5M-Pr-FkT">
             <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-            <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+            <subviews>
+                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="background" translatesAutoresizingMaskIntoConstraints="NO" id="DwA-pF-5cV">
+                    <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                </imageView>
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="6LX-Tj-ajf">
+                    <rect key="frame" x="80" y="401" width="254" height="104"/>
+                    <subviews>
+                        <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="line" placeholder="TC Kimlik No" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="3X6-bA-Ldo">
+                            <rect key="frame" x="8" y="8" width="238" height="21"/>
+                            <nil key="textColor"/>
+                            <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                            <textInputTraits key="textInputTraits" keyboardType="numberPad"/>
+                        </textField>
+                        <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="line" placeholder="Şifre" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="UBm-fb-YC3">
+                            <rect key="frame" x="8" y="37" width="238" height="21"/>
+                            <nil key="textColor"/>
+                            <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                            <textInputTraits key="textInputTraits" secureTextEntry="YES"/>
+                        </textField>
+                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="L4H-SM-v7T">
+                            <rect key="frame" x="215" y="66" width="31" height="30"/>
+                            <state key="normal" title="Giriş"/>
+                            <connections>
+                                <action selector="loginButtonTapped:" destination="-1" eventType="touchUpInside" id="uDc-ox-oC6"/>
+                            </connections>
+                        </button>
+                    </subviews>
+                    <constraints>
+                        <constraint firstItem="L4H-SM-v7T" firstAttribute="top" secondItem="UBm-fb-YC3" secondAttribute="bottom" constant="8" id="Ady-tJ-3NE"/>
+                        <constraint firstItem="UBm-fb-YC3" firstAttribute="top" secondItem="3X6-bA-Ldo" secondAttribute="bottom" constant="8" id="G3G-Vc-mFm"/>
+                        <constraint firstAttribute="bottom" secondItem="L4H-SM-v7T" secondAttribute="bottom" constant="8" id="H6y-aK-iYS"/>
+                        <constraint firstAttribute="trailing" secondItem="3X6-bA-Ldo" secondAttribute="trailing" constant="8" id="JBZ-z7-tIF"/>
+                        <constraint firstAttribute="trailing" secondItem="UBm-fb-YC3" secondAttribute="trailing" constant="8" id="JgS-UJ-DbI"/>
+                        <constraint firstItem="UBm-fb-YC3" firstAttribute="leading" secondItem="6LX-Tj-ajf" secondAttribute="leading" constant="8" id="VFc-q4-PSF"/>
+                        <constraint firstItem="3X6-bA-Ldo" firstAttribute="top" secondItem="6LX-Tj-ajf" secondAttribute="top" constant="8" id="Xe0-7h-tcn"/>
+                        <constraint firstItem="3X6-bA-Ldo" firstAttribute="leading" secondItem="6LX-Tj-ajf" secondAttribute="leading" constant="8" id="ZxE-v9-apR"/>
+                        <constraint firstAttribute="trailing" secondItem="L4H-SM-v7T" secondAttribute="trailing" constant="8" id="egG-sb-dPg"/>
+                    </constraints>
+                </view>
+            </subviews>
+            <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+            <constraints>
+                <constraint firstItem="6LX-Tj-ajf" firstAttribute="centerY" secondItem="fnl-2z-Ty3" secondAttribute="centerY" id="9vB-TO-kO2"/>
+                <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="DwA-pF-5cV" secondAttribute="trailing" id="OR0-VJ-bam"/>
+                <constraint firstItem="DwA-pF-5cV" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" id="XNT-PD-82c"/>
+                <constraint firstAttribute="bottom" secondItem="DwA-pF-5cV" secondAttribute="bottom" id="YyD-AB-sbJ"/>
+                <constraint firstItem="6LX-Tj-ajf" firstAttribute="centerX" secondItem="fnl-2z-Ty3" secondAttribute="centerX" id="ZvI-PX-3pu"/>
+                <constraint firstItem="DwA-pF-5cV" firstAttribute="top" secondItem="i5M-Pr-FkT" secondAttribute="top" id="hGI-t5-hc1"/>
+                <constraint firstItem="6LX-Tj-ajf" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" constant="80" id="qVv-uC-rsn"/>
+            </constraints>
             <viewLayoutGuide key="safeArea" id="fnl-2z-Ty3"/>
+            <point key="canvasLocation" x="47.826086956521742" y="35.491071428571423"/>
         </view>
     </objects>
+    <resources>
+        <image name="background" width="459" height="813"/>
+    </resources>
 </document>

@@ -23,11 +23,20 @@
 		110C293923222E9F0015C299 /* LoginViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 110C293723222E9F0015C299 /* LoginViewController.xib */; };
 		110C293B23222F0D0015C299 /* TabBarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 110C293A23222F0D0015C299 /* TabBarController.swift */; };
 		110C293D23222F510015C299 /* ExtensionUIColor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 110C293C23222F510015C299 /* ExtensionUIColor.swift */; };
-		FEDE045F92FDB77D9E651CBF /* Pods_BaseProject.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 35D6453B2F5DAC9A6C6080B9 /* Pods_BaseProject.framework */; };
+		110C2941232249F70015C299 /* ClassesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 110C293F232249F70015C299 /* ClassesViewController.swift */; };
+		110C2942232249F70015C299 /* ClassesViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 110C2940232249F70015C299 /* ClassesViewController.xib */; };
+		110C294623224F230015C299 /* ClassCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 110C294423224F230015C299 /* ClassCollectionViewCell.swift */; };
+		110C294723224F230015C299 /* ClassCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 110C294523224F230015C299 /* ClassCollectionViewCell.xib */; };
+		110C294A23226E3C0015C299 /* ClassDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 110C294823226E3C0015C299 /* ClassDetailViewController.swift */; };
+		110C294B23226E3C0015C299 /* ClassDetailViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 110C294923226E3C0015C299 /* ClassDetailViewController.xib */; };
+		110C294F23226F690015C299 /* UserTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 110C294D23226F690015C299 /* UserTableViewCell.swift */; };
+		110C295023226F690015C299 /* UserTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 110C294E23226F690015C299 /* UserTableViewCell.xib */; };
+		1110EAF323276B78009692E4 /* Util.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1110EAF223276B78009692E4 /* Util.swift */; };
+		500B8EF7AAE49F81341A912C /* Pods_RollCall.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BE491D89F3E344D171E441F7 /* Pods_RollCall.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
-		11053C3B2320E59400D62C03 /* BaseProject.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = BaseProject.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		11053C3B2320E59400D62C03 /* RollCall.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = RollCall.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		11053C3E2320E59400D62C03 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		11053C452320E59500D62C03 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		11053C4A2320E59500D62C03 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -46,10 +55,19 @@
 		110C293723222E9F0015C299 /* LoginViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = LoginViewController.xib; sourceTree = "<group>"; };
 		110C293A23222F0D0015C299 /* TabBarController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabBarController.swift; sourceTree = "<group>"; };
 		110C293C23222F510015C299 /* ExtensionUIColor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExtensionUIColor.swift; sourceTree = "<group>"; };
+		110C293F232249F70015C299 /* ClassesViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ClassesViewController.swift; sourceTree = "<group>"; };
+		110C2940232249F70015C299 /* ClassesViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ClassesViewController.xib; sourceTree = "<group>"; };
+		110C294423224F230015C299 /* ClassCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ClassCollectionViewCell.swift; sourceTree = "<group>"; };
+		110C294523224F230015C299 /* ClassCollectionViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ClassCollectionViewCell.xib; sourceTree = "<group>"; };
+		110C294823226E3C0015C299 /* ClassDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ClassDetailViewController.swift; sourceTree = "<group>"; };
+		110C294923226E3C0015C299 /* ClassDetailViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ClassDetailViewController.xib; sourceTree = "<group>"; };
+		110C294D23226F690015C299 /* UserTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserTableViewCell.swift; sourceTree = "<group>"; };
+		110C294E23226F690015C299 /* UserTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = UserTableViewCell.xib; sourceTree = "<group>"; };
+		1110EAF223276B78009692E4 /* Util.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Util.swift; sourceTree = "<group>"; };
 		220813308A7A5C8CF0226751 /* Pods-BaseProject.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-BaseProject.release.xcconfig"; path = "Target Support Files/Pods-BaseProject/Pods-BaseProject.release.xcconfig"; sourceTree = "<group>"; };
-		35D6453B2F5DAC9A6C6080B9 /* Pods_BaseProject.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_BaseProject.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		4135B8F8581E6CDA3F8BDB86 /* Pods-BaseProject.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-BaseProject.debug.xcconfig"; path = "Target Support Files/Pods-BaseProject/Pods-BaseProject.debug.xcconfig"; sourceTree = "<group>"; };
 		7CAD14F677B86D49C078F85F /* Pods-RollCall.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-RollCall.debug.xcconfig"; path = "Target Support Files/Pods-RollCall/Pods-RollCall.debug.xcconfig"; sourceTree = "<group>"; };
+		BE491D89F3E344D171E441F7 /* Pods_RollCall.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_RollCall.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		F09DD9373967DB712E7B44F8 /* Pods-RollCall.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-RollCall.release.xcconfig"; path = "Target Support Files/Pods-RollCall/Pods-RollCall.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -58,7 +76,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				FEDE045F92FDB77D9E651CBF /* Pods_BaseProject.framework in Frameworks */,
+				500B8EF7AAE49F81341A912C /* Pods_RollCall.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -68,7 +86,7 @@
 		11053C322320E59400D62C03 = {
 			isa = PBXGroup;
 			children = (
-				11053C3D2320E59400D62C03 /* BaseProject */,
+				11053C3D2320E59400D62C03 /* RollCall */,
 				11053C3C2320E59400D62C03 /* Products */,
 				A6BBDF9BE21518FACB520711 /* Pods */,
 				DAD8EEEC5AF5EEFC1E872F4B /* Frameworks */,
@@ -78,12 +96,12 @@
 		11053C3C2320E59400D62C03 /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				11053C3B2320E59400D62C03 /* BaseProject.app */,
+				11053C3B2320E59400D62C03 /* RollCall.app */,
 			);
 			name = Products;
 			sourceTree = "<group>";
 		};
-		11053C3D2320E59400D62C03 /* BaseProject */ = {
+		11053C3D2320E59400D62C03 /* RollCall */ = {
 			isa = PBXGroup;
 			children = (
 				11053C4A2320E59500D62C03 /* Info.plist */,
@@ -96,8 +114,10 @@
 				11053C5C2320EF8B00D62C03 /* Network */,
 				11053C5B2320EF7E00D62C03 /* Util */,
 				110C293E232235190015C299 /* Login */,
+				110C294323224A020015C299 /* Classes */,
+				110C294C23226E430015C299 /* ClassDetail */,
 			);
-			path = BaseProject;
+			path = RollCall;
 			sourceTree = "<group>";
 		};
 		11053C5A2320EF6C00D62C03 /* Extension */ = {
@@ -115,6 +135,7 @@
 			isa = PBXGroup;
 			children = (
 				11053C542320E9AD00D62C03 /* Constants.swift */,
+				1110EAF223276B78009692E4 /* Util.swift */,
 			);
 			path = Util;
 			sourceTree = "<group>";
@@ -147,6 +168,28 @@
 			path = Login;
 			sourceTree = "<group>";
 		};
+		110C294323224A020015C299 /* Classes */ = {
+			isa = PBXGroup;
+			children = (
+				110C293F232249F70015C299 /* ClassesViewController.swift */,
+				110C2940232249F70015C299 /* ClassesViewController.xib */,
+				110C294423224F230015C299 /* ClassCollectionViewCell.swift */,
+				110C294523224F230015C299 /* ClassCollectionViewCell.xib */,
+			);
+			path = Classes;
+			sourceTree = "<group>";
+		};
+		110C294C23226E430015C299 /* ClassDetail */ = {
+			isa = PBXGroup;
+			children = (
+				110C294823226E3C0015C299 /* ClassDetailViewController.swift */,
+				110C294923226E3C0015C299 /* ClassDetailViewController.xib */,
+				110C294D23226F690015C299 /* UserTableViewCell.swift */,
+				110C294E23226F690015C299 /* UserTableViewCell.xib */,
+			);
+			path = ClassDetail;
+			sourceTree = "<group>";
+		};
 		A6BBDF9BE21518FACB520711 /* Pods */ = {
 			isa = PBXGroup;
 			children = (
@@ -161,7 +204,7 @@
 		DAD8EEEC5AF5EEFC1E872F4B /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
-				35D6453B2F5DAC9A6C6080B9 /* Pods_BaseProject.framework */,
+				BE491D89F3E344D171E441F7 /* Pods_RollCall.framework */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -169,23 +212,23 @@
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
-		11053C3A2320E59400D62C03 /* BaseProject */ = {
+		11053C3A2320E59400D62C03 /* RollCall */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 11053C4D2320E59500D62C03 /* Build configuration list for PBXNativeTarget "BaseProject" */;
+			buildConfigurationList = 11053C4D2320E59500D62C03 /* Build configuration list for PBXNativeTarget "RollCall" */;
 			buildPhases = (
 				C9F0F15719B62B2383E4B0D5 /* [CP] Check Pods Manifest.lock */,
 				11053C372320E59400D62C03 /* Sources */,
 				11053C382320E59400D62C03 /* Frameworks */,
 				11053C392320E59400D62C03 /* Resources */,
-				CB7A319D9A59649A3C93B3DB /* [CP] Embed Pods Frameworks */,
+				7CB84F12D1136A6716272D75 /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
 			dependencies = (
 			);
-			name = BaseProject;
+			name = RollCall;
 			productName = RollCall;
-			productReference = 11053C3B2320E59400D62C03 /* BaseProject.app */;
+			productReference = 11053C3B2320E59400D62C03 /* RollCall.app */;
 			productType = "com.apple.product-type.application";
 		};
 /* End PBXNativeTarget section */
@@ -203,7 +246,7 @@
 					};
 				};
 			};
-			buildConfigurationList = 11053C362320E59400D62C03 /* Build configuration list for PBXProject "BaseProject" */;
+			buildConfigurationList = 11053C362320E59400D62C03 /* Build configuration list for PBXProject "RollCall" */;
 			compatibilityVersion = "Xcode 9.3";
 			developmentRegion = en;
 			hasScannedForEncodings = 0;
@@ -217,7 +260,7 @@
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
-				11053C3A2320E59400D62C03 /* BaseProject */,
+				11053C3A2320E59400D62C03 /* RollCall */,
 			);
 		};
 /* End PBXProject section */
@@ -228,14 +271,35 @@
 			buildActionMask = 2147483647;
 			files = (
 				110C292B232225C90015C299 /* Localizable.strings in Resources */,
+				110C294723224F230015C299 /* ClassCollectionViewCell.xib in Resources */,
 				11053C462320E59500D62C03 /* Assets.xcassets in Resources */,
+				110C295023226F690015C299 /* UserTableViewCell.xib in Resources */,
 				110C293923222E9F0015C299 /* LoginViewController.xib in Resources */,
+				110C294B23226E3C0015C299 /* ClassDetailViewController.xib in Resources */,
+				110C2942232249F70015C299 /* ClassesViewController.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXShellScriptBuildPhase section */
+		7CB84F12D1136A6716272D75 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-RollCall/Pods-RollCall-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-RollCall/Pods-RollCall-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-RollCall/Pods-RollCall-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
 		C9F0F15719B62B2383E4B0D5 /* [CP] Check Pods Manifest.lock */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
@@ -251,28 +315,11 @@
 			outputFileListPaths = (
 			);
 			outputPaths = (
-				"$(DERIVED_FILE_DIR)/Pods-BaseProject-checkManifestLockResult.txt",
+				"$(DERIVED_FILE_DIR)/Pods-RollCall-checkManifestLockResult.txt",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
 			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
-			showEnvVarsInLog = 0;
-		};
-		CB7A319D9A59649A3C93B3DB /* [CP] Embed Pods Frameworks */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputFileListPaths = (
-				"${PODS_ROOT}/Target Support Files/Pods-BaseProject/Pods-BaseProject-frameworks-${CONFIGURATION}-input-files.xcfilelist",
-			);
-			name = "[CP] Embed Pods Frameworks";
-			outputFileListPaths = (
-				"${PODS_ROOT}/Target Support Files/Pods-BaseProject/Pods-BaseProject-frameworks-${CONFIGURATION}-output-files.xcfilelist",
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-BaseProject/Pods-BaseProject-frameworks.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
 /* End PBXShellScriptBuildPhase section */
@@ -283,17 +330,22 @@
 			buildActionMask = 2147483647;
 			files = (
 				110C293823222E9F0015C299 /* LoginViewController.swift in Sources */,
+				1110EAF323276B78009692E4 /* Util.swift in Sources */,
 				110C29252322249A0015C299 /* LocalizationManager.swift in Sources */,
+				110C294A23226E3C0015C299 /* ClassDetailViewController.swift in Sources */,
 				11053C592320EA0F00D62C03 /* ServiceEndPoint.swift in Sources */,
 				110C293523222BA70015C299 /* ExtensionUIView.swift in Sources */,
 				11053C572320E9FA00D62C03 /* NetworkManager.swift in Sources */,
 				110C293D23222F510015C299 /* ExtensionUIColor.swift in Sources */,
+				110C294623224F230015C299 /* ClassCollectionViewCell.swift in Sources */,
 				11053C552320E9AD00D62C03 /* Constants.swift in Sources */,
 				11053C532320E8C800D62C03 /* ExtensionUIViewController.swift in Sources */,
 				110C2933232229510015C299 /* BaseViewController.swift in Sources */,
 				110C29312322276C0015C299 /* StringExtension.swift in Sources */,
 				110C293B23222F0D0015C299 /* TabBarController.swift in Sources */,
+				110C2941232249F70015C299 /* ClassesViewController.swift in Sources */,
 				11053C3F2320E59400D62C03 /* AppDelegate.swift in Sources */,
+				110C294F23226F690015C299 /* UserTableViewCell.swift in Sources */,
 				11053C512320E86700D62C03 /* ExtensionUIApplication.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -433,16 +485,17 @@
 		};
 		11053C4E2320E59500D62C03 /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 4135B8F8581E6CDA3F8BDB86 /* Pods-BaseProject.debug.xcconfig */;
+			baseConfigurationReference = 7CAD14F677B86D49C078F85F /* Pods-RollCall.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
-				INFOPLIST_FILE = BaseProject/Info.plist;
+				DEVELOPMENT_TEAM = P9W6FH8WY3;
+				INFOPLIST_FILE = RollCall/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = cuneytayvaz.BaseProject;
+				PRODUCT_BUNDLE_IDENTIFIER = cuneytayvaz.RollCall;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -451,16 +504,17 @@
 		};
 		11053C4F2320E59500D62C03 /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 220813308A7A5C8CF0226751 /* Pods-BaseProject.release.xcconfig */;
+			baseConfigurationReference = F09DD9373967DB712E7B44F8 /* Pods-RollCall.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
-				INFOPLIST_FILE = BaseProject/Info.plist;
+				DEVELOPMENT_TEAM = P9W6FH8WY3;
+				INFOPLIST_FILE = RollCall/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = cuneytayvaz.BaseProject;
+				PRODUCT_BUNDLE_IDENTIFIER = cuneytayvaz.RollCall;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -470,7 +524,7 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
-		11053C362320E59400D62C03 /* Build configuration list for PBXProject "BaseProject" */ = {
+		11053C362320E59400D62C03 /* Build configuration list for PBXProject "RollCall" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				11053C4B2320E59500D62C03 /* Debug */,
@@ -479,7 +533,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		11053C4D2320E59500D62C03 /* Build configuration list for PBXNativeTarget "BaseProject" */ = {
+		11053C4D2320E59500D62C03 /* Build configuration list for PBXNativeTarget "RollCall" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				11053C4E2320E59500D62C03 /* Debug */,

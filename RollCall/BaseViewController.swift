@@ -21,6 +21,15 @@ class BaseViewController: UIViewController {
         setText()
     }
     
+    override func viewWillAppear(_ animated: Bool) {
+        navigationController?.navigationBar.isHidden = isNavigationBarHidden()
+        navigationItem.hidesBackButton = isBackButtonHidden()
+    }
+    
+    override func viewDidAppear(_ animated: Bool) {
+        navigationController?.interactivePopGestureRecognizer?.isEnabled = isInteractivePopGestureRecognizerEnabled()
+    }
+    
     deinit {
         NotificationCenter.default.removeObserver(self, name: NSNotification.Name(LocalizationManager.LanguageChangeNotificationKey), object: nil)
     }
@@ -31,6 +40,18 @@ class BaseViewController: UIViewController {
     
     func setText() {
         
+    }
+    
+    func isNavigationBarHidden() -> Bool {
+        return false
+    }
+    
+    func isBackButtonHidden() -> Bool {
+        return false
+    }
+    
+    func isInteractivePopGestureRecognizerEnabled() -> Bool {
+        return true
     }
 }
 

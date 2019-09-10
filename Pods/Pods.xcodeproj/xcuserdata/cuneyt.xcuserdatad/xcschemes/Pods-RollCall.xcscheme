@@ -14,9 +14,9 @@
             buildForAnalyzing = "YES">
             <BuildableReference
                BuildableIdentifier = "primary"
-               BlueprintIdentifier = "1BA240E758039DCE7A6061144C02BF08"
-               BuildableName = "Pods_BaseProject.framework"
-               BlueprintName = "Pods-BaseProject"
+               BlueprintIdentifier = "E01B7F5B3D260098407CC14FA3E5A345"
+               BuildableName = "Pods_RollCall.framework"
+               BlueprintName = "Pods-RollCall"
                ReferencedContainer = "container:Pods.xcodeproj">
             </BuildableReference>
          </BuildActionEntry>
@@ -45,9 +45,9 @@
       <MacroExpansion>
          <BuildableReference
             BuildableIdentifier = "primary"
-            BlueprintIdentifier = "1BA240E758039DCE7A6061144C02BF08"
-            BuildableName = "Pods_BaseProject.framework"
-            BlueprintName = "Pods-BaseProject"
+            BlueprintIdentifier = "E01B7F5B3D260098407CC14FA3E5A345"
+            BuildableName = "Pods_RollCall.framework"
+            BlueprintName = "Pods-RollCall"
             ReferencedContainer = "container:Pods.xcodeproj">
          </BuildableReference>
       </MacroExpansion>
