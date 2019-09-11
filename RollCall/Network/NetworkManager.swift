@@ -28,7 +28,7 @@ public class NetworkManager {
         if indicatorEnabled {
             viewController.view.showIndicator(identifier: String(describing: request.self))
         }
-        AF.request(request).responseObject { (response: DataResponse<T>) in
+        Alamofire.request(request).responseObject { (response: DataResponse<T>) in
             if indicatorEnabled {
                 viewController.view.hideIndicator(identifier: String(describing: request.self))
             }
@@ -54,7 +54,7 @@ public class NetworkManager {
         if indicatorEnabled {
             viewController.view.showIndicator(identifier: String(describing: request.self))
         }
-        AF.request(request).responseObject { (response: DataResponse<T>) in
+        Alamofire.request(request).responseObject { (response: DataResponse<T>) in
             if indicatorEnabled {
                 viewController.view.hideIndicator(identifier: String(describing: request.self))
             }

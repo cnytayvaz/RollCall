@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="14490.70" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina6_1" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14490.49"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" id="KGk-i7-Jjw" customClass="StudentTableViewCell" customModule="RollCall" customModuleProvider="target">
+            <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
+            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+            <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="KGk-i7-Jjw" id="H2p-sc-9uM">
+                <rect key="frame" x="0.0" y="0.0" width="320" height="43.5"/>
+                <autoresizingMask key="autoresizingMask"/>
+                <subviews>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="HC9-5d-S23">
+                        <rect key="frame" x="8" y="8" width="42" height="27.5"/>
+                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                        <nil key="textColor"/>
+                        <nil key="highlightedColor"/>
+                    </label>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="nAJ-Va-uNS">
+                        <rect key="frame" x="58" y="8" width="42" height="27.5"/>
+                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                        <nil key="textColor"/>
+                        <nil key="highlightedColor"/>
+                    </label>
+                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="dQR-bQ-jvt">
+                        <rect key="frame" x="282" y="8" width="30" height="27.5"/>
+                        <state key="normal" title="-"/>
+                        <connections>
+                            <action selector="userRollCallButtonTapped:" destination="KGk-i7-Jjw" eventType="touchUpInside" id="jkr-lH-xyv"/>
+                        </connections>
+                    </button>
+                </subviews>
+                <constraints>
+                    <constraint firstAttribute="bottom" secondItem="nAJ-Va-uNS" secondAttribute="bottom" constant="8" id="1oK-3H-9gL"/>
+                    <constraint firstItem="HC9-5d-S23" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" constant="8" id="8CX-Ns-Dhs"/>
+                    <constraint firstAttribute="bottom" secondItem="dQR-bQ-jvt" secondAttribute="bottom" constant="8" id="G5A-rg-pG2"/>
+                    <constraint firstItem="dQR-bQ-jvt" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" constant="8" id="KeM-Rn-RK2"/>
+                    <constraint firstItem="nAJ-Va-uNS" firstAttribute="leading" secondItem="HC9-5d-S23" secondAttribute="trailing" constant="8" id="aSO-fi-dDW"/>
+                    <constraint firstItem="nAJ-Va-uNS" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" constant="8" id="e53-3M-Y9I"/>
+                    <constraint firstItem="dQR-bQ-jvt" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="nAJ-Va-uNS" secondAttribute="trailing" constant="8" id="gZm-hB-aVV"/>
+                    <constraint firstAttribute="trailing" secondItem="dQR-bQ-jvt" secondAttribute="trailing" constant="8" id="jQA-iy-320"/>
+                    <constraint firstAttribute="bottom" secondItem="HC9-5d-S23" secondAttribute="bottom" constant="8" id="rgy-Mb-8S1"/>
+                    <constraint firstItem="HC9-5d-S23" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="8" id="vKt-gc-XFn"/>
+                </constraints>
+            </tableViewCellContentView>
+            <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+            <viewLayoutGuide key="safeArea" id="njF-e1-oar"/>
+            <connections>
+                <outlet property="userNameLabel" destination="nAJ-Va-uNS" id="j7M-iU-f5x"/>
+                <outlet property="userNoLabel" destination="HC9-5d-S23" id="QfR-TL-qsL"/>
+                <outlet property="userRollCallButton" destination="dQR-bQ-jvt" id="I5s-xg-FMC"/>
+            </connections>
+        </tableViewCell>
+    </objects>
+</document>

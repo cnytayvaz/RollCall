@@ -23,11 +23,11 @@ class BaseViewController: UIViewController {
     
     override func viewWillAppear(_ animated: Bool) {
         navigationController?.navigationBar.isHidden = isNavigationBarHidden()
-        navigationItem.hidesBackButton = isBackButtonHidden()
+        navigationItem.hidesBackButton = !isBackActionEnabled()
     }
     
     override func viewDidAppear(_ animated: Bool) {
-        navigationController?.interactivePopGestureRecognizer?.isEnabled = isInteractivePopGestureRecognizerEnabled()
+        navigationController?.interactivePopGestureRecognizer?.isEnabled = isBackActionEnabled()
     }
     
     deinit {
@@ -46,11 +46,7 @@ class BaseViewController: UIViewController {
         return false
     }
     
-    func isBackButtonHidden() -> Bool {
-        return false
-    }
-    
-    func isInteractivePopGestureRecognizerEnabled() -> Bool {
+    func isBackActionEnabled() -> Bool {
         return true
     }
 }

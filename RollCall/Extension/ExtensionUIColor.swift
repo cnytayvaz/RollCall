@@ -10,7 +10,11 @@ import UIKit
 
 extension UIColor {
     
-    class var exampleColor: UIColor { return UIColor(hexString: "4287f5") }
+    // homeViewController
+    class var rollCallButton: UIColor { return UIColor(hexString: "e85c10") }
+    class var messageButton: UIColor { return UIColor(hexString: "96c816") }
+    class var groupMessageButton: UIColor { return UIColor(hexString: "029fe2") }
+    
     
     convenience init(hexString: String) {
         let hex = hexString.trimmingCharacters(in: CharacterSet.alphanumerics.inverted)

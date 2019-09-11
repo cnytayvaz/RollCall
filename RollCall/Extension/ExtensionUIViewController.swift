@@ -22,15 +22,27 @@ extension UIViewController {
         }
         alert.addAction(button)
         
-        self.presentViewController(viewController: alert)
+        presentViewController(viewController: alert)
     }
     
     func presentViewController(viewController: UIViewController, animated: Bool = true, completion: (() -> Void)? = nil) {
-        self.present(viewController, animated: animated, completion: completion)
+        present(viewController, animated: animated, completion: completion)
+    }
+    
+    func dismissViewController(animated: Bool = true, completion: (() -> Void)? = nil) {
+        dismiss(animated: animated, completion: completion)
     }
     
     func pushViewController(viewController: UIViewController, animated: Bool = true) {
-        self.navigationController?.pushViewController(viewController, animated: animated)
+        navigationController?.pushViewController(viewController, animated: animated)
+    }
+    
+    func popViewController(animated: Bool = true) {
+        navigationController?.popViewController(animated: animated)
+    }
+    
+    func popToRootViewController(animated: Bool = true) {
+        navigationController?.popToRootViewController(animated: animated)
     }
     
 }

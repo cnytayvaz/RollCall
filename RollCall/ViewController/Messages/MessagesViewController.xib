@@ -1,0 +1,85 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="14490.70" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina6_1" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14490.49"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="MessagesViewController" customModule="RollCall" customModuleProvider="target">
+            <connections>
+                <outlet property="tableView" destination="mJl-Iw-o1P" id="geb-Iq-XiH"/>
+                <outlet property="tableViewHeightConstraint" destination="Ryd-Ws-dws" id="8k3-qb-Fh2"/>
+                <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
+            </connections>
+        </placeholder>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view clearsContextBeforeDrawing="NO" contentMode="scaleToFill" id="i5M-Pr-FkT">
+            <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="background" translatesAutoresizingMaskIntoConstraints="NO" id="SKa-KL-75t">
+                    <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                </imageView>
+                <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="FjF-lz-bL6">
+                    <rect key="frame" x="0.0" y="44" width="414" height="852"/>
+                    <subviews>
+                        <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="rfz-hk-67A">
+                            <rect key="frame" x="0.0" y="0.0" width="414" height="0.0"/>
+                            <subviews>
+                                <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="SnK-5e-TsL">
+                                    <rect key="frame" x="0.0" y="0.0" width="414" height="0.0"/>
+                                    <subviews>
+                                        <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" style="plain" allowsSelection="NO" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="mJl-Iw-o1P">
+                                            <rect key="frame" x="0.0" y="0.0" width="414" height="0.0"/>
+                                            <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                            <constraints>
+                                                <constraint firstAttribute="height" id="Ryd-Ws-dws"/>
+                                            </constraints>
+                                            <inset key="separatorInset" minX="16" minY="0.0" maxX="16" maxY="0.0"/>
+                                        </tableView>
+                                    </subviews>
+                                </stackView>
+                            </subviews>
+                            <constraints>
+                                <constraint firstAttribute="bottom" secondItem="SnK-5e-TsL" secondAttribute="bottom" id="2Op-IZ-169"/>
+                                <constraint firstAttribute="trailing" secondItem="SnK-5e-TsL" secondAttribute="trailing" id="ICr-S3-CKu"/>
+                                <constraint firstItem="SnK-5e-TsL" firstAttribute="leading" secondItem="rfz-hk-67A" secondAttribute="leading" id="OKR-Ri-eBP"/>
+                                <constraint firstItem="SnK-5e-TsL" firstAttribute="top" secondItem="rfz-hk-67A" secondAttribute="top" id="s6c-XZ-bVE"/>
+                            </constraints>
+                        </view>
+                    </subviews>
+                    <constraints>
+                        <constraint firstAttribute="trailing" secondItem="rfz-hk-67A" secondAttribute="trailing" id="68q-7c-LUJ"/>
+                        <constraint firstAttribute="bottom" secondItem="rfz-hk-67A" secondAttribute="bottom" id="CZd-Gs-y31"/>
+                        <constraint firstItem="rfz-hk-67A" firstAttribute="top" secondItem="FjF-lz-bL6" secondAttribute="top" id="LDy-pK-cMa"/>
+                        <constraint firstItem="rfz-hk-67A" firstAttribute="height" secondItem="FjF-lz-bL6" secondAttribute="height" priority="250" id="a0r-xK-upd"/>
+                        <constraint firstItem="rfz-hk-67A" firstAttribute="width" secondItem="FjF-lz-bL6" secondAttribute="width" id="bs4-NO-oVP"/>
+                        <constraint firstItem="rfz-hk-67A" firstAttribute="leading" secondItem="FjF-lz-bL6" secondAttribute="leading" id="hrR-h2-cpo"/>
+                    </constraints>
+                    <viewLayoutGuide key="safeArea" id="uAO-4x-X0G"/>
+                </scrollView>
+            </subviews>
+            <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+            <constraints>
+                <constraint firstItem="SKa-KL-75t" firstAttribute="trailing" secondItem="fnl-2z-Ty3" secondAttribute="trailing" id="HZt-ys-e98"/>
+                <constraint firstItem="FjF-lz-bL6" firstAttribute="top" secondItem="fnl-2z-Ty3" secondAttribute="top" id="JT8-2c-InJ"/>
+                <constraint firstItem="FjF-lz-bL6" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" id="Nqs-9Z-8FS"/>
+                <constraint firstItem="SKa-KL-75t" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" id="bqC-F9-NsJ"/>
+                <constraint firstAttribute="bottom" secondItem="FjF-lz-bL6" secondAttribute="bottom" id="kqz-6Q-seE"/>
+                <constraint firstAttribute="bottom" secondItem="SKa-KL-75t" secondAttribute="bottom" id="m1z-lP-5iR"/>
+                <constraint firstItem="SKa-KL-75t" firstAttribute="top" secondItem="i5M-Pr-FkT" secondAttribute="top" id="nmd-Dz-5Tj"/>
+                <constraint firstItem="FjF-lz-bL6" firstAttribute="trailing" secondItem="fnl-2z-Ty3" secondAttribute="trailing" id="zE2-SZ-6OU"/>
+            </constraints>
+            <viewLayoutGuide key="safeArea" id="fnl-2z-Ty3"/>
+            <point key="canvasLocation" x="68.115942028985515" y="38.839285714285715"/>
+        </view>
+    </objects>
+    <resources>
+        <image name="background" width="459" height="813"/>
+    </resources>
+</document>
