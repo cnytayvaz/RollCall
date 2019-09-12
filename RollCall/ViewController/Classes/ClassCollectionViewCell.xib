@@ -28,12 +28,33 @@
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="NQn-8N-nT3">
+                                <rect key="frame" x="0.0" y="0.0" width="187" height="181"/>
+                                <subviews>
+                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="circle" translatesAutoresizingMaskIntoConstraints="NO" id="BZO-Xh-jMJ">
+                                        <rect key="frame" x="167" y="161" width="12" height="12"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" constant="12" id="JXt-Do-wHY"/>
+                                            <constraint firstAttribute="height" constant="12" id="mWT-uy-70V"/>
+                                        </constraints>
+                                    </imageView>
+                                </subviews>
+                                <color key="backgroundColor" white="0.0" alpha="0.29999999999999999" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <constraints>
+                                    <constraint firstAttribute="trailing" secondItem="BZO-Xh-jMJ" secondAttribute="trailing" constant="8" id="4Yd-C7-BOA"/>
+                                    <constraint firstAttribute="bottom" secondItem="BZO-Xh-jMJ" secondAttribute="bottom" constant="8" id="rrr-Dg-tdt"/>
+                                </constraints>
+                            </view>
                         </subviews>
                         <color key="backgroundColor" red="0.0" green="0.0" blue="1" alpha="0.050000000000000003" colorSpace="custom" customColorSpace="calibratedRGB"/>
                         <constraints>
                             <constraint firstItem="obc-0d-KK1" firstAttribute="leading" secondItem="ltW-cp-Wcd" secondAttribute="leading" constant="8" id="01Q-wB-ziO"/>
+                            <constraint firstItem="NQn-8N-nT3" firstAttribute="leading" secondItem="ltW-cp-Wcd" secondAttribute="leading" id="2Mc-oA-Tvy"/>
                             <constraint firstAttribute="trailing" secondItem="obc-0d-KK1" secondAttribute="trailing" constant="8" id="4cW-fo-v6w"/>
+                            <constraint firstAttribute="trailing" secondItem="NQn-8N-nT3" secondAttribute="trailing" id="JdT-W1-2mX"/>
+                            <constraint firstAttribute="bottom" secondItem="NQn-8N-nT3" secondAttribute="bottom" id="RCE-uw-lEN"/>
                             <constraint firstItem="obc-0d-KK1" firstAttribute="centerY" secondItem="ltW-cp-Wcd" secondAttribute="centerY" id="TwJ-fd-j9a"/>
+                            <constraint firstItem="NQn-8N-nT3" firstAttribute="top" secondItem="ltW-cp-Wcd" secondAttribute="top" id="uC0-ve-pIR"/>
                         </constraints>
                     </view>
                 </subviews>
@@ -48,9 +69,13 @@
             <size key="customSize" width="187" height="181"/>
             <connections>
                 <outlet property="nameLabel" destination="obc-0d-KK1" id="X1S-3x-pjz"/>
+                <outlet property="selectedView" destination="NQn-8N-nT3" id="hoR-Ak-nNQ"/>
                 <outlet property="view" destination="ltW-cp-Wcd" id="KVj-Xg-Czw"/>
             </connections>
             <point key="canvasLocation" x="147.10144927536234" y="79.352678571428569"/>
         </collectionViewCell>
     </objects>
+    <resources>
+        <image name="circle" width="256" height="256"/>
+    </resources>
 </document>

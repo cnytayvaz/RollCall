@@ -15,6 +15,7 @@ class ClassCollectionViewCell: UICollectionViewCell {
     
     @IBOutlet weak var nameLabel: UILabel!
     @IBOutlet weak var view: UIView!
+    @IBOutlet weak var selectedView: UIView!
     
     override func awakeFromNib() {
         super.awakeFromNib()
@@ -23,8 +24,9 @@ class ClassCollectionViewCell: UICollectionViewCell {
         view.layer.borderWidth = 0.3
     }
     
-    func configure(with name: String) {
-        nameLabel.text = name
+    func configure(with classroom: Classroom) {
+        nameLabel.text = classroom.name
+        selectedView.isHidden = !classroom.selected
     }
 
 }
