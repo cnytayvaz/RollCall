@@ -36,12 +36,12 @@ class ClassesViewController: BaseViewController {
         didSet {
             if isFiltering() {
                 filteredClasses = self.classes.filter({( item: Classroom) -> Bool in
-                    return item.name.lowercased().contains(searchText.lowercased())
+                    item.name.lowercased().contains(searchText.lowercased())
                 })
             }
             if deleteBarButton != nil {
                 deleteBarButton.isEnabled = !self.classes.filter({ item -> Bool in
-                    return item.selected
+                    item.selected
                 }).isEmpty
             }
             if !isFiltering() {
@@ -121,16 +121,48 @@ class ClassesViewController: BaseViewController {
     
     @objc func deleteBarButtonItemTapped() {
         let deletedItems = classes.filter({ item -> Bool in
-            return item.selected && item.id != 0
+            item.selected && item.id != 0
         })
         deletedClasses.append(contentsOf: deletedItems)
         classes = classes.filter({ item -> Bool in
-            return !item.selected
+            !item.selected
         })
     }
     
     @objc func addBarButtonItemTapped() {
-        classes.append(Classroom(id: 3, name: "Cuneyt", selected: false))
+//        classes.append(Classroom(id: 3, name: "Cuneyt", selected: false))
+        
+        let alert = UIAlertController(title: "Yeni Sınıf".localized(), message: nil, preferredStyle: .alert)
+        
+        alert.addTextField { textField in
+            textField.placeholder = "Sınıf".localized()
+        }
+        
+        let button = UIAlertAction(title: "Tamam".localized(), style: .default) { _ in
+            let newClassName = alert.textFields?[0].text?.trimmingCharacters(in: .whitespacesAndNewlines) ?? ""
+            
+            if newClassName.isEmpty {
+                self.showAlert(message: "Sınıf ismi boş olmamalı.".localized())
+                return
+            }
+            
+            if !self.classes.filter({ item -> Bool in
+                item.name.lowercased() == newClassName.lowercased()
+            }).isEmpty {
+                self.showAlert(message: "Bu isimde bir sınıf zaten var.".localized())
+                return
+            }
+            
+            self.classes.append(Classroom(id: 0, name: newClassName, selected: false))
+        }
+        
+        alert.addAction(button)
+        
+        let cancelButton = UIAlertAction(title: "İptal".localized(), style: .cancel) { _ in
+            
+        }
+        alert.addAction(cancelButton)
+        presentViewController(viewController: alert)
     }
     
     @objc func selectBarButtonItemTapped() {

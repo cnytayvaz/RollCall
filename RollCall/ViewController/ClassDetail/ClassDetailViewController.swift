@@ -94,7 +94,7 @@ class ClassDetailViewController: BaseViewController {
     
     func filterContentForSearchText(_ searchText: String) {
         filteredUsers = users.filter({( item: User) -> Bool in
-            return String(format: "%@ %@", item.no, item.name).lowercased().contains(searchText.lowercased())
+            String(format: "%@ %@", item.no, item.name).lowercased().contains(searchText.lowercased())
         })
     }
 }
