@@ -130,7 +130,6 @@ class ClassesViewController: BaseViewController {
     }
     
     @objc func addBarButtonItemTapped() {
-//        classes.append(Classroom(id: 3, name: "Cuneyt", selected: false))
         
         let alert = UIAlertController(title: "Yeni Sınıf".localized(), message: nil, preferredStyle: .alert)
         
