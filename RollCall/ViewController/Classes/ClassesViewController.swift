@@ -78,6 +78,7 @@ class ClassesViewController: BaseViewController {
         
         searchController.searchResultsUpdater = self
         searchController.obscuresBackgroundDuringPresentation = false
+        definesPresentationContext = true
         navigationItem.searchController = searchController
         
         collectionView.register(ClassCollectionViewCell.nib, forCellWithReuseIdentifier: ClassCollectionViewCell.identifier)
