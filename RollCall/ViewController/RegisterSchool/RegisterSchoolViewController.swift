@@ -14,8 +14,6 @@ class RegisterSchoolViewController: BaseViewController {
     @IBOutlet weak var managerTCKNTextField: UITextField!
     @IBOutlet weak var managerNameTextField: UITextField!
     @IBOutlet weak var managerPhoneNameTextField: UITextField!
-    @IBOutlet weak var passwordTextField: UITextField!
-    @IBOutlet weak var passwordAgainTextField: UITextField!
     @IBOutlet weak var registerButton: UIButton!
     
     override func viewDidLoad() {
@@ -29,8 +27,6 @@ class RegisterSchoolViewController: BaseViewController {
         managerTCKNTextField.placeholder = "Admin TC".localized()
         managerNameTextField.placeholder = "Admin Adı".localized()
         managerPhoneNameTextField.placeholder = "+90 5__ ___ __ __".localized()
-        passwordTextField.placeholder = "Şifre".localized()
-        passwordAgainTextField.placeholder = "Şifre(Tekrar)".localized()
         registerButton.setTitle("Register".localized(), for: .normal)
     }
     
