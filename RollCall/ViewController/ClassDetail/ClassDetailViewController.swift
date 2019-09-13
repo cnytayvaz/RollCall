@@ -9,79 +9,179 @@
 import UIKit
 
 struct User {
+    var id = 0
     var no = ""
     var name = ""
-    var state = true
+    var selected = false
 }
 
 class ClassDetailViewController: BaseViewController {
-
-    @IBOutlet weak var tableViewUsersLabel: UILabel!
-    @IBOutlet weak var tableViewUsers: UITableView!
-    @IBOutlet weak var tableViewUsersHeightConstraint: NSLayoutConstraint!
-    @IBOutlet weak var tableViewAbsentUsersLabel: UILabel!
-    @IBOutlet weak var tableViewAbsentUsers: UITableView!
-    @IBOutlet weak var tableViewAbsentUsersHeightConstraint: NSLayoutConstraint!
-    @IBOutlet weak var confirmButton: UIButton!
+    
+    @IBOutlet weak var tableView: UITableView!
+    @IBOutlet weak var tableViewHeightConstraint: NSLayoutConstraint!
+    
+    var pageMode = PageMode.view
+    var searchText = ""
+    
+    var editBarButton: UIBarButtonItem!
+    var doneBarButton: UIBarButtonItem!
+    var flexibleSpace: UIBarButtonItem!
+    var deleteBarButton: UIBarButtonItem!
+    var addBarButton: UIBarButtonItem!
+    var selectBarButton: UIBarButtonItem!
+    var cancelBarButton: UIBarButtonItem!
     
     var users: [User] = [] {
         didSet {
-            tableViewUsers.reloadData()
-            tableViewUsersHeightConstraint.constant = tableViewUsers.contentSize.height
+            if isFiltering() {
+                filteredUsers = self.users.filter({( item: User) -> Bool in
+                    item.name.lowercased().contains(searchText.lowercased())
+                })
+            }
+            if deleteBarButton != nil {
+                deleteBarButton.isEnabled = !self.users.filter({ item -> Bool in
+                    item.selected
+                }).isEmpty
+            }
+            if !isFiltering() {
+                tableView.reloadData()
+                tableViewHeightConstraint.constant = tableView.contentSize.height
+            }
         }
     }
     var filteredUsers: [User] = [] {
         didSet {
-            tableViewUsers.reloadData()
-            tableViewUsersHeightConstraint.constant = tableViewUsers.contentSize.height
+            tableView.reloadData()
+            tableViewHeightConstraint.constant = tableView.contentSize.height
         }
     }
-    var absentUsers: [User] = [] {
-        didSet {
-            tableViewAbsentUsers.reloadData()
-            tableViewAbsentUsersHeightConstraint.constant = tableViewAbsentUsers.contentSize.height
-        }
-    }
+    var deletedUsers: [User] = []
     
     let searchController = UISearchController(searchResultsController: nil)
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        users.append(User(no: "100", name: "Cüneyt AYVAZ", state: true))
-        users.append(User(no: "101", name: "Ozan DAMCI", state: true))
-        users.append(User(no: "102", name: "Akif DEMİREZEN", state: true))
-        users.append(User(no: "103", name: "MUSTAFA KOCADAĞ", state: true))
+        users.append(User(id: 0, no: "100", name: "Cüneyt AYVAZ", selected: false))
+        users.append(User(id: 0, no: "101", name: "Ozan DAMCI", selected: false))
+        users.append(User(id: 0, no: "102", name: "Akif DEMİREZEN", selected: false))
+        users.append(User(id: 0, no: "103", name: "MUSTAFA KOCADAĞ", selected: false))
         
         searchController.searchResultsUpdater = self
         searchController.obscuresBackgroundDuringPresentation = false
-        
+        definesPresentationContext = true
         navigationItem.searchController = searchController
         
-        tableViewUsers.register(StudentTableViewCell.nib, forCellReuseIdentifier: StudentTableViewCell.identifier)
-        tableViewUsers.delegate = self
-        tableViewUsers.dataSource = self
+        tableView.register(StudentTableViewCell.nib, forCellReuseIdentifier: StudentTableViewCell.identifier)
+        tableView.delegate = self
+        tableView.dataSource = self
         
-        tableViewAbsentUsers.register(StudentTableViewCell.nib, forCellReuseIdentifier: StudentTableViewCell.identifier)
-        tableViewAbsentUsers.delegate = self
-        tableViewAbsentUsers.dataSource = self
+        prepareBarButtonItems()
     }
     
     override func setText() {
         title = "Öğrenciler".localized()
-        tableViewUsersLabel.text = "Öğrenciler".localized()
-        tableViewAbsentUsersLabel.text = "Gelmeyenler".localized()
         searchController.searchBar.placeholder = "Ara".localized()
-        confirmButton.setTitle("Onayla".localized(), for: .normal)
     }
     
     override func viewWillLayoutSubviews() {
-        tableViewUsersHeightConstraint.constant = tableViewUsers.contentSize.height
-        tableViewAbsentUsersHeightConstraint.constant = tableViewAbsentUsers.contentSize.height
+        tableViewHeightConstraint.constant = tableView.contentSize.height
     }
-
-    @IBAction func confirmButtonTapped(_ sender: Any) {
+    
+    func prepareBarButtonItems() {
+        editBarButton = UIBarButtonItem(barButtonSystemItem: .edit, target: self, action: #selector(editBarButtonItemTapped))
+        doneBarButton = UIBarButtonItem(barButtonSystemItem: .done, target: self, action: #selector(doneBarButtonItemTapped))
+        flexibleSpace = UIBarButtonItem(barButtonSystemItem: .flexibleSpace, target: self, action: nil)
+        deleteBarButton = UIBarButtonItem(barButtonSystemItem: .trash, target: self, action: #selector(deleteBarButtonItemTapped))
+        deleteBarButton.isEnabled = false
+        addBarButton = UIBarButtonItem(barButtonSystemItem: .add, target: self, action: #selector(addBarButtonItemTapped))
+        selectBarButton = UIBarButtonItem(title: "Seç".localized(), style: .plain, target: self, action: #selector(selectBarButtonItemTapped))
+        cancelBarButton = UIBarButtonItem(barButtonSystemItem: .cancel, target: self, action: #selector(cancelBarButtonItemTapped))
         
+        navigationItem.rightBarButtonItem = editBarButton
+    }
+    
+    @objc func editBarButtonItemTapped() {
+        pageMode = .edit
+        navigationItem.rightBarButtonItem = doneBarButton
+        setToolbarItems([addBarButton, flexibleSpace, selectBarButton], animated: true)
+        navigationController?.setToolbarHidden(false, animated: true)
+    }
+    
+    @objc func doneBarButtonItemTapped() {
+        pageMode = .view
+        navigationItem.rightBarButtonItem = editBarButton
+        navigationController?.setToolbarHidden(true, animated: true)
+    }
+    
+    @objc func deleteBarButtonItemTapped() {
+        let deletedItems = users.filter({ item -> Bool in
+            item.selected && item.id != 0
+        })
+        deletedUsers.append(contentsOf: deletedItems)
+        users = users.filter({ item -> Bool in
+            !item.selected
+        })
+    }
+    
+    @objc func addBarButtonItemTapped() {
+        
+        let alert = UIAlertController(title: "Yeni Öğrenci".localized(), message: nil, preferredStyle: .alert)
+        
+        alert.addTextField { textField in
+            textField.placeholder = "Öğrenci No".localized()
+        }
+        alert.addTextField { textField in
+            textField.placeholder = "Öğrenci".localized()
+        }
+        
+        let button = UIAlertAction(title: "Tamam".localized(), style: .default) { _ in
+            let newUserNo = alert.textFields?[0].text?.trimmingCharacters(in: .whitespacesAndNewlines) ?? ""
+            let newUserName = alert.textFields?[1].text?.trimmingCharacters(in: .whitespacesAndNewlines) ?? ""
+            
+            if newUserNo.isEmpty {
+                self.showAlert(message: "Öğrenci No boş olmamalı.".localized())
+                return
+            }
+            
+            if newUserName.isEmpty {
+                self.showAlert(message: "Öğrenci ismi boş olmamalı.".localized())
+                return
+            }
+            
+            if !self.users.filter({ item -> Bool in
+                item.no.lowercased() == newUserNo.lowercased()
+            }).isEmpty {
+                self.showAlert(message: "Bu numarada bir öğrenci zaten var.".localized())
+                return
+            }
+            
+            self.users.append(User(id: 0, no: newUserNo, name: newUserName, selected: false))
+        }
+        
+        alert.addAction(button)
+        
+        let cancelButton = UIAlertAction(title: "İptal".localized(), style: .cancel) { _ in
+            
+        }
+        alert.addAction(cancelButton)
+        presentViewController(viewController: alert)
+    }
+    
+    @objc func selectBarButtonItemTapped() {
+        pageMode = .select
+        navigationItem.rightBarButtonItem = nil
+        setToolbarItems([deleteBarButton, flexibleSpace, cancelBarButton], animated: true)
+    }
+    
+    @objc func cancelBarButtonItemTapped() {
+        pageMode = .edit
+        navigationItem.rightBarButtonItem = doneBarButton
+        deleteBarButton.isEnabled = false
+        setToolbarItems([addBarButton, flexibleSpace, selectBarButton], animated: true)
+        for i in 0..<users.count {
+            users[i].selected = false
+        }
     }
     
     func searchBarIsEmpty() -> Bool {
@@ -93,30 +193,44 @@ class ClassDetailViewController: BaseViewController {
     }
     
     func filterContentForSearchText(_ searchText: String) {
+        self.searchText = searchText
         filteredUsers = users.filter({( item: User) -> Bool in
             String(format: "%@ %@", item.no, item.name).lowercased().contains(searchText.lowercased())
         })
     }
-}
-
-extension ClassDetailViewController: UserTableViewCellDelegate {
-    func userRollCallButtonTapped(user: User) {
-        if user.state && !absentUsers.contains(where: { item -> Bool in
-            item.no == user.no
-        }) {
-            var absentUser = user
-            absentUser.state = false
-            absentUsers.append(absentUser)
+    
+    func findArrayIndex(_ indexPath: IndexPath) -> Int {
+        if isFiltering() {
+            let user = filteredUsers[indexPath.row]
+            return findItemIndexInArray(user) ?? 0
         }
-        else if !user.state {
-            absentUsers.removeAll { item -> Bool in
-                item.no == user.no
+        
+        return indexPath.row
+    }
+    
+    func findItemIndexInArray(_ user: User) -> Int? {
+        for i in 0..<users.count {
+            if user.no == users[i].no {
+                return i
             }
         }
+        return nil
     }
 }
 
 extension ClassDetailViewController: UITableViewDelegate, UITableViewDataSource {
+    
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        switch pageMode {
+        case .view:
+            break
+        case .select:
+            let index = findArrayIndex(indexPath)
+            users[index].selected = !users[index].selected
+        case .edit:
+            break
+        }
+    }
     
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
         return UITableView.automaticDimension
@@ -127,41 +241,17 @@ extension ClassDetailViewController: UITableViewDelegate, UITableViewDataSource 
     }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        switch tableView {
-        case tableViewUsers:
-            if isFiltering() {
-                return filteredUsers.count
-            }
-            else {
-                return users.count
-            }
-        case tableViewAbsentUsers:
-            return absentUsers.count
-        default:
-            return 0
+        if isFiltering() {
+            return filteredUsers.count
         }
+        return users.count
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        switch tableView {
-        case tableViewUsers:
-            let cell = tableView.dequeueReusableCell(withIdentifier: StudentTableViewCell.identifier, for: indexPath) as! StudentTableViewCell
-            
-            if isFiltering() {
-                cell.configure(with: filteredUsers[indexPath.row], delegate: self)
-            }
-            else {
-                cell.configure(with: users[indexPath.row], delegate: self)
-            }
-            
-            return cell
-        case tableViewAbsentUsers:
-            let cell = tableView.dequeueReusableCell(withIdentifier: StudentTableViewCell.identifier, for: indexPath) as! StudentTableViewCell
-            cell.configure(with: absentUsers[indexPath.row], delegate: self)
-            return cell
-        default:
-            return UITableViewCell()
-        }
+        let index = findArrayIndex(indexPath)
+        let cell = tableView.dequeueReusableCell(withIdentifier: StudentTableViewCell.identifier, for: indexPath) as! StudentTableViewCell
+        cell.configure(with: users[index])
+        return cell
     }
 }
 

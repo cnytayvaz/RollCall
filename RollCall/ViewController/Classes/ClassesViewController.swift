@@ -191,7 +191,7 @@ class ClassesViewController: BaseViewController {
     func filterContentForSearchText(_ searchText: String) {
         self.searchText = searchText
         filteredClasses = classes.filter({( item: Classroom) -> Bool in
-            return item.name.lowercased().contains(searchText.lowercased())
+            item.name.lowercased().contains(searchText.lowercased())
         })
     }
     

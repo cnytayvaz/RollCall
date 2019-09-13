@@ -8,10 +8,6 @@
 
 import UIKit
 
-protocol UserTableViewCellDelegate {
-    func userRollCallButtonTapped(user: User)
-}
-
 class StudentTableViewCell: UITableViewCell {
     
     class var identifier: String { return String(describing: self) }
@@ -19,16 +15,11 @@ class StudentTableViewCell: UITableViewCell {
     
     @IBOutlet weak var userNoLabel: UILabel!
     @IBOutlet weak var userNameLabel: UILabel!
-    @IBOutlet weak var userRollCallButton: UIButton!
-    
-    var user: User?
-    var delegate: UserTableViewCellDelegate?
+    @IBOutlet weak var selectedView: UIView!
     
     override func awakeFromNib() {
         super.awakeFromNib()
         // Initialization code
-        userRollCallButton.layer.borderWidth = 0.3
-        userRollCallButton.layer.borderColor = UIColor.blue.cgColor
     }
 
     override func setSelected(_ selected: Bool, animated: Bool) {
@@ -37,16 +28,10 @@ class StudentTableViewCell: UITableViewCell {
         // Configure the view for the selected state
     }
     
-    func configure(with user: User, delegate: UserTableViewCellDelegate) {
-        self.user = user
-        self.delegate = delegate
+    func configure(with user: User) {
         userNoLabel.text = user.no
         userNameLabel.text = user.name
-    }
-    
-    @IBAction func userRollCallButtonTapped(_ sender: Any) {
-        guard let user = user else { return }
-        delegate?.userRollCallButtonTapped(user: user)
+        selectedView.isHidden = !user.selected
     }
     
 }
