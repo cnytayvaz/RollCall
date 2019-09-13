@@ -126,7 +126,7 @@ class TeachersViewController: BaseViewController {
             textField.placeholder = "Öğretmen Tc Kimlik No".localized()
         }
         alert.addTextField { textField in
-            textField.placeholder = "Öğretmen".localized()
+            textField.placeholder = "Öğretmen Adı".localized()
         }
         alert.addTextField { textField in
             textField.placeholder = "Öğretmen Tel".localized()
@@ -134,8 +134,8 @@ class TeachersViewController: BaseViewController {
         
         let button = UIAlertAction(title: "Tamam".localized(), style: .default) { _ in
             let newUserTc = alert.textFields?[0].text?.trimmingCharacters(in: .whitespacesAndNewlines) ?? ""
-            let newUserName = alert.textFields?[2].text?.trimmingCharacters(in: .whitespacesAndNewlines) ?? ""
-            let newUserPhone = alert.textFields?[3].text?.trimmingCharacters(in: .whitespacesAndNewlines) ?? ""
+            let newUserName = alert.textFields?[1].text?.trimmingCharacters(in: .whitespacesAndNewlines) ?? ""
+            let newUserPhone = alert.textFields?[2].text?.trimmingCharacters(in: .whitespacesAndNewlines) ?? ""
             
             if newUserTc.isEmpty {
                 self.showAlert(message: "Öğretmen Tc Kimlik No boş olmamalı.".localized())

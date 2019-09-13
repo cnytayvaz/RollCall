@@ -137,7 +137,7 @@ class ClassDetailViewController: BaseViewController {
             textField.placeholder = "Öğrenci No".localized()
         }
         alert.addTextField { textField in
-            textField.placeholder = "Öğrenci".localized()
+            textField.placeholder = "Öğrenci Adı".localized()
         }
         alert.addTextField { textField in
             textField.placeholder = "Veli Tel".localized()

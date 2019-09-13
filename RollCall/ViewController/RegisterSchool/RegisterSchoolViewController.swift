@@ -35,8 +35,7 @@ class RegisterSchoolViewController: BaseViewController {
     }
     
     @IBAction func registerButtonTapped(_ sender: Any) {
-        let viewController = ConfirmCodeViewController()
-        pushViewController(viewController: viewController)
+        pushViewController(viewController: SuccessfulViewController())
     }
     
 }

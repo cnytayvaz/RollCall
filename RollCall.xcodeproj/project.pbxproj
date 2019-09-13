@@ -9,8 +9,6 @@
 /* Begin PBXBuildFile section */
 		110274A12328BAC600BDD829 /* RegisterSchoolViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1102749F2328BAC600BDD829 /* RegisterSchoolViewController.swift */; };
 		110274A22328BAC600BDD829 /* RegisterSchoolViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 110274A02328BAC600BDD829 /* RegisterSchoolViewController.xib */; };
-		110274A62328C8BE00BDD829 /* ConfirmCodeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 110274A42328C8BE00BDD829 /* ConfirmCodeViewController.swift */; };
-		110274A72328C8BE00BDD829 /* ConfirmCodeViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 110274A52328C8BE00BDD829 /* ConfirmCodeViewController.xib */; };
 		110274AB2328CF9E00BDD829 /* SuccessfulViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 110274A92328CF9E00BDD829 /* SuccessfulViewController.swift */; };
 		110274AC2328CF9E00BDD829 /* SuccessfulViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 110274AA2328CF9E00BDD829 /* SuccessfulViewController.xib */; };
 		110274AF2328D26100BDD829 /* check-animation.json in Resources */ = {isa = PBXBuildFile; fileRef = 110274AE2328D26100BDD829 /* check-animation.json */; };
@@ -62,8 +60,6 @@
 /* Begin PBXFileReference section */
 		1102749F2328BAC600BDD829 /* RegisterSchoolViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterSchoolViewController.swift; sourceTree = "<group>"; };
 		110274A02328BAC600BDD829 /* RegisterSchoolViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = RegisterSchoolViewController.xib; sourceTree = "<group>"; };
-		110274A42328C8BE00BDD829 /* ConfirmCodeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConfirmCodeViewController.swift; sourceTree = "<group>"; };
-		110274A52328C8BE00BDD829 /* ConfirmCodeViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ConfirmCodeViewController.xib; sourceTree = "<group>"; };
 		110274A92328CF9E00BDD829 /* SuccessfulViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SuccessfulViewController.swift; sourceTree = "<group>"; };
 		110274AA2328CF9E00BDD829 /* SuccessfulViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SuccessfulViewController.xib; sourceTree = "<group>"; };
 		110274AE2328D26100BDD829 /* check-animation.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = "check-animation.json"; sourceTree = "<group>"; };
@@ -140,7 +136,6 @@
 				1110EAF82327ACDF009692E4 /* Messages */,
 				1110EB012327CD81009692E4 /* Home */,
 				110274A32328BB0B00BDD829 /* RegisterSchool */,
-				110274A82328C9AB00BDD829 /* ConfirmCode */,
 				110274AD2328CFA500BDD829 /* Successful */,
 				110274B52328D38F00BDD829 /* SelectSchool */,
 				11F02921232BADE6004461F9 /* Teachers */,
@@ -155,15 +150,6 @@
 				110274A02328BAC600BDD829 /* RegisterSchoolViewController.xib */,
 			);
 			path = RegisterSchool;
-			sourceTree = "<group>";
-		};
-		110274A82328C9AB00BDD829 /* ConfirmCode */ = {
-			isa = PBXGroup;
-			children = (
-				110274A42328C8BE00BDD829 /* ConfirmCodeViewController.swift */,
-				110274A52328C8BE00BDD829 /* ConfirmCodeViewController.xib */,
-			);
-			path = ConfirmCode;
 			sourceTree = "<group>";
 		};
 		110274AD2328CFA500BDD829 /* Successful */ = {
@@ -434,7 +420,6 @@
 				110C292B232225C90015C299 /* Localizable.strings in Resources */,
 				110C294723224F230015C299 /* ClassCollectionViewCell.xib in Resources */,
 				11F02920232BADE1004461F9 /* TeachersViewController.xib in Resources */,
-				110274A72328C8BE00BDD829 /* ConfirmCodeViewController.xib in Resources */,
 				110274B92328D4B700BDD829 /* SchoolTableViewCell.xib in Resources */,
 				110274AF2328D26100BDD829 /* check-animation.json in Resources */,
 				1110EAF72327ACDA009692E4 /* MessagesViewController.xib in Resources */,
@@ -525,7 +510,6 @@
 				110274A12328BAC600BDD829 /* RegisterSchoolViewController.swift in Sources */,
 				110C29312322276C0015C299 /* StringExtension.swift in Sources */,
 				110C293B23222F0D0015C299 /* TabBarController.swift in Sources */,
-				110274A62328C8BE00BDD829 /* ConfirmCodeViewController.swift in Sources */,
 				110C2941232249F70015C299 /* ClassesViewController.swift in Sources */,
 				110274BC2328DBE700BDD829 /* UserType.swift in Sources */,
 				11053C3F2320E59400D62C03 /* AppDelegate.swift in Sources */,
