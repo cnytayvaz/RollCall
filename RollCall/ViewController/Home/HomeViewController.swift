@@ -11,7 +11,11 @@ import CircleMenu
 
 class HomeViewController: BaseViewController {
 
-    var buttons: [(icon: String, color: UIColor, pageType: PageType)] = []
+    var buttons: [(icon: String, color: UIColor, pageId: Int)] = []
+    let CLASS_MESSAGE = 0
+    let STUDENT_MESSAGE = 1
+    let EDIT_CLASS_AND_USER = 2
+    let EDIT_TEACHER = 3
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -20,12 +24,12 @@ class HomeViewController: BaseViewController {
         
         switch userType {
         case .admin:
-            buttons = [("user", UIColor.messageButton, .editClass),
-                       ("inspection", UIColor.rollCallButton, .editTeacher),
-                       ("multiple-users", UIColor.groupMessageButton, .editStudent),
-                       ("user", UIColor.messageButton, .editClass),
-                       ("inspection", UIColor.rollCallButton, .editClass),
-                       ("multiple-users", UIColor.groupMessageButton, .editClass)]
+            buttons = [("user", UIColor.messageButton, CLASS_MESSAGE),
+                       ("inspection", UIColor.rollCallButton, STUDENT_MESSAGE),
+                       ("multiple-users", UIColor.groupMessageButton, EDIT_CLASS_AND_USER),
+                       ("user", UIColor.messageButton, EDIT_TEACHER),
+                       ("inspection", UIColor.rollCallButton, 0),
+                       ("multiple-users", UIColor.groupMessageButton, 0)]
         case .teacher:
             break
         case .parent:
@@ -60,23 +64,25 @@ extension HomeViewController: CircleMenuDelegate {
     // configure buttons
     func circleMenu(_ circleMenu: CircleMenu, willDisplay button: UIButton, atIndex: Int) {
         button.backgroundColor = buttons[atIndex].color
-        button.setImage(UIImage(named: buttons[atIndex].icon), for: .normal)
+        button.setTitle(atIndex.description, for: .normal)
+//        button.setImage(UIImage(named: buttons[atIndex].icon), for: .normal)
     }
     
     // call before animation
     func circleMenu(_ circleMenu: CircleMenu, buttonWillSelected button: UIButton, atIndex: Int) {
         
-        let pageType = buttons[atIndex].pageType
-        switch pageType {
-        case .editClass:
-            let viewController = MessagesViewController()
-            pushViewController(viewController: viewController)
-        case .editTeacher:
-            let viewController = ClassesViewController()
-            pushViewController(viewController: viewController)
-        case .editStudent:
-            let viewController = ClassesViewController()
-            pushViewController(viewController: viewController)
+        let pageId = buttons[atIndex].pageId
+        switch pageId {
+        case CLASS_MESSAGE:
+            pushViewController(viewController: MessagesViewController())
+        case STUDENT_MESSAGE:
+            pushViewController(viewController: MessagesViewController())
+        case EDIT_CLASS_AND_USER:
+            pushViewController(viewController: ClassesViewController())
+        case EDIT_TEACHER:
+            pushViewController(viewController: TeachersViewController())
+        default:
+            break
         }
     }
     

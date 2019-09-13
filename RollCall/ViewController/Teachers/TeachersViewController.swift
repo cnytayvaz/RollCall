@@ -1,23 +1,14 @@
 //
-//  ClassDetailViewController.swift
+//  TeachersViewController.swift
 //  RollCall
 //
-//  Created by Cüneyt AYVAZ on 6.09.2019.
+//  Created by Cüneyt AYVAZ on 13.09.2019.
 //  Copyright © 2019 Cüneyt AYVAZ. All rights reserved.
 //
 
 import UIKit
 
-struct User {
-    var id = 0
-    var tc = ""
-    var no = ""
-    var name = ""
-    var phone = ""
-    var selected = false
-}
-
-class ClassDetailViewController: BaseViewController {
+class TeachersViewController: BaseViewController {
     
     @IBOutlet weak var tableView: UITableView!
     @IBOutlet weak var tableViewHeightConstraint: NSLayoutConstraint!
@@ -60,10 +51,11 @@ class ClassDetailViewController: BaseViewController {
     var deletedUsers: [User] = []
     
     let searchController = UISearchController(searchResultsController: nil)
-    
+
     override func viewDidLoad() {
         super.viewDidLoad()
-        
+
+        // Do any additional setup after loading the view.
         users.append(User(id: 0, tc: "100", no: "100", name: "Cüneyt AYVAZ", phone: "0545 000 00 00", selected: false))
         users.append(User(id: 0, tc: "101", no: "101", name: "Ozan DAMCI", phone: "0545 000 00 00", selected: false))
         users.append(User(id: 0, tc: "102", no: "102", name: "Akif DEMİREZEN", phone: "0545 000 00 00", selected: false))
@@ -74,7 +66,7 @@ class ClassDetailViewController: BaseViewController {
         definesPresentationContext = true
         navigationItem.searchController = searchController
         
-        tableView.register(StudentTableViewCell.nib, forCellReuseIdentifier: StudentTableViewCell.identifier)
+        tableView.register(TeacherTableViewCell.nib, forCellReuseIdentifier: TeacherTableViewCell.identifier)
         tableView.delegate = self
         tableView.dataSource = self
         
@@ -82,7 +74,7 @@ class ClassDetailViewController: BaseViewController {
     }
     
     override func setText() {
-        title = "Öğrenciler".localized()
+        title = "Öğretmenler".localized()
         searchController.searchBar.placeholder = "Ara".localized()
     }
     
@@ -128,62 +120,46 @@ class ClassDetailViewController: BaseViewController {
     
     @objc func addBarButtonItemTapped() {
         
-        let alert = UIAlertController(title: "Yeni Öğrenci".localized(), message: nil, preferredStyle: .alert)
+        let alert = UIAlertController(title: "Yeni Öğretmen".localized(), message: nil, preferredStyle: .alert)
         
         alert.addTextField { textField in
-            textField.placeholder = "Öğrenci Tc Kimlik No".localized()
+            textField.placeholder = "Öğretmen Tc Kimlik No".localized()
         }
         alert.addTextField { textField in
-            textField.placeholder = "Öğrenci No".localized()
+            textField.placeholder = "Öğretmen".localized()
         }
         alert.addTextField { textField in
-            textField.placeholder = "Öğrenci".localized()
-        }
-        alert.addTextField { textField in
-            textField.placeholder = "Veli Tel".localized()
+            textField.placeholder = "Öğretmen Tel".localized()
         }
         
         let button = UIAlertAction(title: "Tamam".localized(), style: .default) { _ in
             let newUserTc = alert.textFields?[0].text?.trimmingCharacters(in: .whitespacesAndNewlines) ?? ""
-            let newUserNo = alert.textFields?[1].text?.trimmingCharacters(in: .whitespacesAndNewlines) ?? ""
             let newUserName = alert.textFields?[2].text?.trimmingCharacters(in: .whitespacesAndNewlines) ?? ""
             let newUserPhone = alert.textFields?[3].text?.trimmingCharacters(in: .whitespacesAndNewlines) ?? ""
             
             if newUserTc.isEmpty {
-                self.showAlert(message: "Öğrenci Tc Kimlik No boş olmamalı.".localized())
-                return
-            }
-            
-            if newUserNo.isEmpty {
-                self.showAlert(message: "Öğrenci No boş olmamalı.".localized())
+                self.showAlert(message: "Öğretmen Tc Kimlik No boş olmamalı.".localized())
                 return
             }
             
             if newUserName.isEmpty {
-                self.showAlert(message: "Öğrenci ismi boş olmamalı.".localized())
+                self.showAlert(message: "Öğretmen ismi boş olmamalı.".localized())
                 return
             }
             
             if newUserPhone.isEmpty {
-                self.showAlert(message: "Veli telefon numarası boş olmamalı.".localized())
+                self.showAlert(message: "Öğretmen telefon numarası boş olmamalı.".localized())
                 return
             }
             
             if !self.users.filter({ item -> Bool in
                 item.tc.lowercased() == newUserTc.lowercased()
             }).isEmpty {
-                self.showAlert(message: "Bu TC Kimlik Numarası zaten var.".localized())
+                self.showAlert(message: "Bu Tc Kimlik Numarası zaten var.".localized())
                 return
             }
             
-            if !self.users.filter({ item -> Bool in
-                item.no.lowercased() == newUserNo.lowercased()
-            }).isEmpty {
-                self.showAlert(message: "Bu numarada bir öğrenci zaten var.".localized())
-                return
-            }
-            
-            self.users.append(User(id: 0, tc: newUserTc, no: newUserNo, name: newUserName, phone: newUserPhone, selected: false))
+            self.users.append(User(id: 0, tc: newUserTc, no: "", name: newUserName, phone: newUserPhone, selected: false))
         }
         
         alert.addAction(button)
@@ -222,7 +198,7 @@ class ClassDetailViewController: BaseViewController {
     func filterContentForSearchText(_ searchText: String) {
         self.searchText = searchText
         filteredUsers = users.filter({( item: User) -> Bool in
-            String(format: "%@ %@", item.no, item.name).lowercased().contains(searchText.lowercased())
+            item.name.lowercased().contains(searchText.lowercased())
         })
     }
     
@@ -245,7 +221,7 @@ class ClassDetailViewController: BaseViewController {
     }
 }
 
-extension ClassDetailViewController: UITableViewDelegate, UITableViewDataSource {
+extension TeachersViewController: UITableViewDelegate, UITableViewDataSource {
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         switch pageMode {
@@ -276,13 +252,13 @@ extension ClassDetailViewController: UITableViewDelegate, UITableViewDataSource 
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let index = findArrayIndex(indexPath)
-        let cell = tableView.dequeueReusableCell(withIdentifier: StudentTableViewCell.identifier, for: indexPath) as! StudentTableViewCell
+        let cell = tableView.dequeueReusableCell(withIdentifier: TeacherTableViewCell.identifier, for: indexPath) as! TeacherTableViewCell
         cell.configure(with: users[index])
         return cell
     }
 }
 
-extension ClassDetailViewController: UISearchResultsUpdating {
+extension TeachersViewController: UISearchResultsUpdating {
     
     func updateSearchResults(for searchController: UISearchController) {
         filterContentForSearchText(searchController.searchBar.text ?? "")

@@ -18,8 +18,8 @@ class ClassesViewController: BaseViewController {
 
     @IBOutlet weak var collectionView: UICollectionView!
     
-    let rowItemCount = 3
-    let itemSpacing = 8
+    let ROW_ITEM_COUNT = 3
+    let ITEM_SPACE = 8
     
     var pageMode = PageMode.view
     var searchText = ""
@@ -197,11 +197,11 @@ class ClassesViewController: BaseViewController {
     
     func findArrayIndex(_ indexPath: IndexPath) -> Int {
         if isFiltering() {
-            let classroom = filteredClasses[(indexPath.section * rowItemCount) + indexPath.row]
+            let classroom = filteredClasses[(indexPath.section * ROW_ITEM_COUNT) + indexPath.row]
             return findItemIndexInArray(classroom) ?? 0
         }
         
-        return (indexPath.section * rowItemCount) + indexPath.row
+        return (indexPath.section * ROW_ITEM_COUNT) + indexPath.row
     }
     
     func findItemIndexInArray(_ classroom: Classroom) -> Int? {
@@ -249,16 +249,16 @@ extension ClassesViewController: UICollectionViewDelegate, UICollectionViewDataS
     }
     
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
-        return CGSize(width: ((collectionView.frame.size.width - CGFloat(integerLiteral: ((rowItemCount - 1) * itemSpacing))) / CGFloat(integerLiteral: rowItemCount)),
-                      height: ((collectionView.frame.size.width - CGFloat(integerLiteral: ((rowItemCount - 1) * itemSpacing))) / CGFloat(integerLiteral: rowItemCount)))
+        return CGSize(width: ((collectionView.frame.size.width - CGFloat(integerLiteral: ((ROW_ITEM_COUNT - 1) * ITEM_SPACE))) / CGFloat(integerLiteral: ROW_ITEM_COUNT)),
+                      height: ((collectionView.frame.size.width - CGFloat(integerLiteral: ((ROW_ITEM_COUNT - 1) * ITEM_SPACE))) / CGFloat(integerLiteral: ROW_ITEM_COUNT)))
     }
     
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, minimumInteritemSpacingForSectionAt section: Int) -> CGFloat {
-        return CGFloat(integerLiteral: itemSpacing)
+        return CGFloat(integerLiteral: ITEM_SPACE)
     }
     
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, minimumLineSpacingForSectionAt section: Int) -> CGFloat {
-        return CGFloat(integerLiteral: itemSpacing)
+        return CGFloat(integerLiteral: ITEM_SPACE)
     }
     
 }

@@ -19,7 +19,6 @@
 		110274B82328D4B700BDD829 /* SchoolTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 110274B62328D4B700BDD829 /* SchoolTableViewCell.swift */; };
 		110274B92328D4B700BDD829 /* SchoolTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 110274B72328D4B700BDD829 /* SchoolTableViewCell.xib */; };
 		110274BC2328DBE700BDD829 /* UserType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 110274BB2328DBE700BDD829 /* UserType.swift */; };
-		110274BE2328DC7400BDD829 /* PageType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 110274BD2328DC7400BDD829 /* PageType.swift */; };
 		110274C02328DD7800BDD829 /* UserManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 110274BF2328DD7800BDD829 /* UserManager.swift */; };
 		110274C32328FCDD00BDD829 /* PageMode.swift in Sources */ = {isa = PBXBuildFile; fileRef = 110274C22328FCDD00BDD829 /* PageMode.swift */; };
 		11053C3F2320E59400D62C03 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11053C3E2320E59400D62C03 /* AppDelegate.swift */; };
@@ -53,6 +52,10 @@
 		1110EAFC2327AD04009692E4 /* MessageTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 1110EAFA2327AD04009692E4 /* MessageTableViewCell.xib */; };
 		1110EAFF2327CD7D009692E4 /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1110EAFD2327CD7C009692E4 /* HomeViewController.swift */; };
 		1110EB002327CD7D009692E4 /* HomeViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 1110EAFE2327CD7C009692E4 /* HomeViewController.xib */; };
+		11F0291F232BADE1004461F9 /* TeachersViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11F0291D232BADE1004461F9 /* TeachersViewController.swift */; };
+		11F02920232BADE1004461F9 /* TeachersViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 11F0291E232BADE1004461F9 /* TeachersViewController.xib */; };
+		11F02924232BAE04004461F9 /* TeacherTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11F02922232BAE04004461F9 /* TeacherTableViewCell.swift */; };
+		11F02925232BAE04004461F9 /* TeacherTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 11F02923232BAE04004461F9 /* TeacherTableViewCell.xib */; };
 		500B8EF7AAE49F81341A912C /* Pods_RollCall.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BE491D89F3E344D171E441F7 /* Pods_RollCall.framework */; };
 /* End PBXBuildFile section */
 
@@ -69,7 +72,6 @@
 		110274B62328D4B700BDD829 /* SchoolTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SchoolTableViewCell.swift; sourceTree = "<group>"; };
 		110274B72328D4B700BDD829 /* SchoolTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SchoolTableViewCell.xib; sourceTree = "<group>"; };
 		110274BB2328DBE700BDD829 /* UserType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserType.swift; sourceTree = "<group>"; };
-		110274BD2328DC7400BDD829 /* PageType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PageType.swift; sourceTree = "<group>"; };
 		110274BF2328DD7800BDD829 /* UserManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserManager.swift; sourceTree = "<group>"; };
 		110274C22328FCDD00BDD829 /* PageMode.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PageMode.swift; sourceTree = "<group>"; };
 		11053C3B2320E59400D62C03 /* RollCall.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = RollCall.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -106,6 +108,10 @@
 		1110EAFA2327AD04009692E4 /* MessageTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = MessageTableViewCell.xib; sourceTree = "<group>"; };
 		1110EAFD2327CD7C009692E4 /* HomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
 		1110EAFE2327CD7C009692E4 /* HomeViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = HomeViewController.xib; sourceTree = "<group>"; };
+		11F0291D232BADE1004461F9 /* TeachersViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TeachersViewController.swift; sourceTree = "<group>"; };
+		11F0291E232BADE1004461F9 /* TeachersViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = TeachersViewController.xib; sourceTree = "<group>"; };
+		11F02922232BAE04004461F9 /* TeacherTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TeacherTableViewCell.swift; sourceTree = "<group>"; };
+		11F02923232BAE04004461F9 /* TeacherTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = TeacherTableViewCell.xib; sourceTree = "<group>"; };
 		220813308A7A5C8CF0226751 /* Pods-BaseProject.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-BaseProject.release.xcconfig"; path = "Target Support Files/Pods-BaseProject/Pods-BaseProject.release.xcconfig"; sourceTree = "<group>"; };
 		4135B8F8581E6CDA3F8BDB86 /* Pods-BaseProject.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-BaseProject.debug.xcconfig"; path = "Target Support Files/Pods-BaseProject/Pods-BaseProject.debug.xcconfig"; sourceTree = "<group>"; };
 		7CAD14F677B86D49C078F85F /* Pods-RollCall.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-RollCall.debug.xcconfig"; path = "Target Support Files/Pods-RollCall/Pods-RollCall.debug.xcconfig"; sourceTree = "<group>"; };
@@ -137,6 +143,7 @@
 				110274A82328C9AB00BDD829 /* ConfirmCode */,
 				110274AD2328CFA500BDD829 /* Successful */,
 				110274B52328D38F00BDD829 /* SelectSchool */,
+				11F02921232BADE6004461F9 /* Teachers */,
 			);
 			path = ViewController;
 			sourceTree = "<group>";
@@ -191,7 +198,6 @@
 			isa = PBXGroup;
 			children = (
 				110274BB2328DBE700BDD829 /* UserType.swift */,
-				110274BD2328DC7400BDD829 /* PageType.swift */,
 				110274C22328FCDD00BDD829 /* PageMode.swift */,
 			);
 			path = Enumeration;
@@ -230,8 +236,8 @@
 				11053C3E2320E59400D62C03 /* AppDelegate.swift */,
 				11053C452320E59500D62C03 /* Assets.xcassets */,
 				110C2932232229510015C299 /* BaseViewController.swift */,
-				110274B02328D27200BDD829 /* Animation */,
 				110C293A23222F0D0015C299 /* TabBarController.swift */,
+				110274B02328D27200BDD829 /* Animation */,
 				110274BA2328DBC000BDD829 /* Enumeration */,
 				11053C5A2320EF6C00D62C03 /* Extension */,
 				110C2926232224D40015C299 /* Localization */,
@@ -333,6 +339,17 @@
 			path = Home;
 			sourceTree = "<group>";
 		};
+		11F02921232BADE6004461F9 /* Teachers */ = {
+			isa = PBXGroup;
+			children = (
+				11F0291D232BADE1004461F9 /* TeachersViewController.swift */,
+				11F0291E232BADE1004461F9 /* TeachersViewController.xib */,
+				11F02922232BAE04004461F9 /* TeacherTableViewCell.swift */,
+				11F02923232BAE04004461F9 /* TeacherTableViewCell.xib */,
+			);
+			path = Teachers;
+			sourceTree = "<group>";
+		};
 		A6BBDF9BE21518FACB520711 /* Pods */ = {
 			isa = PBXGroup;
 			children = (
@@ -413,8 +430,10 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				11F02925232BAE04004461F9 /* TeacherTableViewCell.xib in Resources */,
 				110C292B232225C90015C299 /* Localizable.strings in Resources */,
 				110C294723224F230015C299 /* ClassCollectionViewCell.xib in Resources */,
+				11F02920232BADE1004461F9 /* TeachersViewController.xib in Resources */,
 				110274A72328C8BE00BDD829 /* ConfirmCodeViewController.xib in Resources */,
 				110274B92328D4B700BDD829 /* SchoolTableViewCell.xib in Resources */,
 				110274AF2328D26100BDD829 /* check-animation.json in Resources */,
@@ -486,6 +505,7 @@
 				110C29252322249A0015C299 /* LocalizationManager.swift in Sources */,
 				1110EAF62327ACDA009692E4 /* MessagesViewController.swift in Sources */,
 				110274B32328D38A00BDD829 /* SelectSchoolViewController.swift in Sources */,
+				11F0291F232BADE1004461F9 /* TeachersViewController.swift in Sources */,
 				110C294A23226E3C0015C299 /* ClassDetailViewController.swift in Sources */,
 				1110EAFF2327CD7D009692E4 /* HomeViewController.swift in Sources */,
 				110274C02328DD7800BDD829 /* UserManager.swift in Sources */,
@@ -499,7 +519,7 @@
 				11053C552320E9AD00D62C03 /* Constants.swift in Sources */,
 				11053C532320E8C800D62C03 /* ExtensionUIViewController.swift in Sources */,
 				110274B82328D4B700BDD829 /* SchoolTableViewCell.swift in Sources */,
-				110274BE2328DC7400BDD829 /* PageType.swift in Sources */,
+				11F02924232BAE04004461F9 /* TeacherTableViewCell.swift in Sources */,
 				110C2933232229510015C299 /* BaseViewController.swift in Sources */,
 				1110EAFB2327AD04009692E4 /* MessageTableViewCell.swift in Sources */,
 				110274A12328BAC600BDD829 /* RegisterSchoolViewController.swift in Sources */,
