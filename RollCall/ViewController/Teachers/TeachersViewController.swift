@@ -63,7 +63,6 @@ class TeachersViewController: BaseViewController {
         
         searchController.searchResultsUpdater = self
         searchController.obscuresBackgroundDuringPresentation = false
-        definesPresentationContext = true
         navigationItem.searchController = searchController
         
         tableView.register(TeacherTableViewCell.nib, forCellReuseIdentifier: TeacherTableViewCell.identifier)

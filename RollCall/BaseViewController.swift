@@ -14,6 +14,8 @@ class BaseViewController: UIViewController {
         super.viewDidLoad()
         // Do any additional setup after loading the view.
         
+        view.backgroundColor = UIColor(patternImage: #imageLiteral(resourceName: "background.png"))
+        definesPresentationContext = true
         NotificationCenter.default.addObserver(self,
                                                selector: #selector(updateLocalization),
                                                name: NSNotification.Name(LocalizationManager.LanguageChangeNotificationKey),

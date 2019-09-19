@@ -25,9 +25,6 @@
             <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
-                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="background" translatesAutoresizingMaskIntoConstraints="NO" id="DwA-pF-5cV">
-                    <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
-                </imageView>
                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="6LX-Tj-ajf">
                     <rect key="frame" x="80" y="386.5" width="254" height="133"/>
                     <subviews>
@@ -84,19 +81,12 @@
             <constraints>
                 <constraint firstItem="6LX-Tj-ajf" firstAttribute="centerY" secondItem="fnl-2z-Ty3" secondAttribute="centerY" id="9vB-TO-kO2"/>
                 <constraint firstItem="PoA-mP-JeY" firstAttribute="top" secondItem="fnl-2z-Ty3" secondAttribute="top" constant="8" id="HNR-64-bbU"/>
-                <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="DwA-pF-5cV" secondAttribute="trailing" id="OR0-VJ-bam"/>
                 <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="PoA-mP-JeY" secondAttribute="trailing" constant="8" id="PuH-CN-5Pr"/>
-                <constraint firstItem="DwA-pF-5cV" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" id="XNT-PD-82c"/>
-                <constraint firstAttribute="bottom" secondItem="DwA-pF-5cV" secondAttribute="bottom" id="YyD-AB-sbJ"/>
                 <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="6LX-Tj-ajf" secondAttribute="trailing" constant="80" id="ZML-R3-1aW"/>
-                <constraint firstItem="DwA-pF-5cV" firstAttribute="top" secondItem="i5M-Pr-FkT" secondAttribute="top" id="hGI-t5-hc1"/>
                 <constraint firstItem="6LX-Tj-ajf" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" constant="80" id="qVv-uC-rsn"/>
             </constraints>
             <viewLayoutGuide key="safeArea" id="fnl-2z-Ty3"/>
             <point key="canvasLocation" x="47.826086956521742" y="35.491071428571423"/>
         </view>
     </objects>
-    <resources>
-        <image name="background" width="459" height="813"/>
-    </resources>
 </document>

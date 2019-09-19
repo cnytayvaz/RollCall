@@ -22,9 +22,6 @@
             <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
-                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="background" translatesAutoresizingMaskIntoConstraints="NO" id="3I3-7g-Eaz">
-                    <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
-                </imageView>
                 <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="EvV-kb-xgu">
                     <rect key="frame" x="0.0" y="44" width="414" height="818"/>
                     <subviews>
@@ -65,19 +62,12 @@
             </subviews>
             <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
             <constraints>
-                <constraint firstAttribute="bottom" secondItem="3I3-7g-Eaz" secondAttribute="bottom" id="AUj-o6-QjP"/>
-                <constraint firstItem="3I3-7g-Eaz" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" id="Ck6-kq-Zse"/>
                 <constraint firstItem="EvV-kb-xgu" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" id="DPU-Sc-VzA"/>
                 <constraint firstItem="EvV-kb-xgu" firstAttribute="trailing" secondItem="fnl-2z-Ty3" secondAttribute="trailing" id="FE7-bH-5MF"/>
-                <constraint firstItem="3I3-7g-Eaz" firstAttribute="trailing" secondItem="fnl-2z-Ty3" secondAttribute="trailing" id="Hzb-GX-A8u"/>
                 <constraint firstItem="EvV-kb-xgu" firstAttribute="top" secondItem="fnl-2z-Ty3" secondAttribute="top" id="IFu-lc-4dy"/>
-                <constraint firstItem="3I3-7g-Eaz" firstAttribute="top" secondItem="i5M-Pr-FkT" secondAttribute="top" id="Lhh-oV-XSY"/>
                 <constraint firstItem="fnl-2z-Ty3" firstAttribute="bottom" secondItem="EvV-kb-xgu" secondAttribute="bottom" id="vQD-cK-Pq0"/>
             </constraints>
             <viewLayoutGuide key="safeArea" id="fnl-2z-Ty3"/>
         </view>
     </objects>
-    <resources>
-        <image name="background" width="459" height="813"/>
-    </resources>
 </document>

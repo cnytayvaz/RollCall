@@ -10,9 +10,9 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <objects>
-        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="ClassesViewController" customModule="RollCall" customModuleProvider="target">
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="SettingsViewController" customModule="RollCall" customModuleProvider="target">
             <connections>
-                <outlet property="collectionView" destination="ruW-T8-JtO" id="HnK-38-ywe"/>
+                <outlet property="tableView" destination="ENz-BZ-7hR" id="Wwi-e8-IRI"/>
                 <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
             </connections>
         </placeholder>
@@ -21,23 +21,18 @@
             <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
-                <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="none" translatesAutoresizingMaskIntoConstraints="NO" id="ruW-T8-JtO">
-                    <rect key="frame" x="8" y="52" width="398" height="802"/>
+                <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="ENz-BZ-7hR">
+                    <rect key="frame" x="0.0" y="44" width="414" height="818"/>
                     <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                    <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="10" minimumInteritemSpacing="10" id="TpG-Qo-SF3">
-                        <size key="itemSize" width="50" height="50"/>
-                        <size key="headerReferenceSize" width="0.0" height="0.0"/>
-                        <size key="footerReferenceSize" width="0.0" height="0.0"/>
-                        <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
-                    </collectionViewFlowLayout>
-                </collectionView>
+                    <inset key="separatorInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
+                </tableView>
             </subviews>
             <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
             <constraints>
-                <constraint firstItem="ruW-T8-JtO" firstAttribute="top" secondItem="fnl-2z-Ty3" secondAttribute="top" constant="8" id="1GY-La-tZt"/>
-                <constraint firstItem="ruW-T8-JtO" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" constant="8" id="EvS-Ap-y9n"/>
-                <constraint firstItem="fnl-2z-Ty3" firstAttribute="bottom" secondItem="ruW-T8-JtO" secondAttribute="bottom" constant="8" id="XOC-ps-5RT"/>
-                <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="ruW-T8-JtO" secondAttribute="trailing" constant="8" id="bEk-oc-mlc"/>
+                <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="ENz-BZ-7hR" secondAttribute="trailing" id="DdR-zR-Ixs"/>
+                <constraint firstItem="ENz-BZ-7hR" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" id="dYw-po-rig"/>
+                <constraint firstItem="fnl-2z-Ty3" firstAttribute="bottom" secondItem="ENz-BZ-7hR" secondAttribute="bottom" id="mnX-Ro-PlE"/>
+                <constraint firstItem="ENz-BZ-7hR" firstAttribute="top" secondItem="fnl-2z-Ty3" secondAttribute="top" id="xOR-ZP-yZl"/>
             </constraints>
             <viewLayoutGuide key="safeArea" id="fnl-2z-Ty3"/>
         </view>

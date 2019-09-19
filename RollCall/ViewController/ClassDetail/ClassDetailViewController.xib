@@ -22,9 +22,6 @@
             <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
-                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="background" translatesAutoresizingMaskIntoConstraints="NO" id="auK-Rs-2e8">
-                    <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
-                </imageView>
                 <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="42P-wt-7zn">
                     <rect key="frame" x="0.0" y="44" width="414" height="810"/>
                     <subviews>
@@ -68,16 +65,9 @@
                 <constraint firstAttribute="trailing" secondItem="42P-wt-7zn" secondAttribute="trailing" id="56B-K0-1ws"/>
                 <constraint firstItem="fnl-2z-Ty3" firstAttribute="bottom" secondItem="42P-wt-7zn" secondAttribute="bottom" constant="8" id="D67-k2-JnJ"/>
                 <constraint firstItem="42P-wt-7zn" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" id="Fo6-vl-mre"/>
-                <constraint firstItem="auK-Rs-2e8" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" id="maT-fD-TEc"/>
-                <constraint firstAttribute="bottom" secondItem="auK-Rs-2e8" secondAttribute="bottom" id="meP-Qg-pTu"/>
-                <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="auK-Rs-2e8" secondAttribute="trailing" id="pjH-Gg-2cp"/>
-                <constraint firstItem="auK-Rs-2e8" firstAttribute="top" secondItem="i5M-Pr-FkT" secondAttribute="top" id="w7H-NY-UJZ"/>
             </constraints>
             <viewLayoutGuide key="safeArea" id="fnl-2z-Ty3"/>
             <point key="canvasLocation" x="47.826086956521742" y="35.491071428571423"/>
         </view>
     </objects>
-    <resources>
-        <image name="background" width="459" height="813"/>
-    </resources>
 </document>

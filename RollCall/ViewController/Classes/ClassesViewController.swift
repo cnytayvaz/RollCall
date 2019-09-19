@@ -15,13 +15,39 @@ struct Classroom {
 }
 
 class ClassesViewController: BaseViewController {
-
+    
+    required init?(coder aDecoder: NSCoder) {
+        fatalError("init(coder:) has not been implemented")
+    }
+    
+    init() {
+        super.init(nibName: nil, bundle: nil)
+    }
+    
+    init(with pageMode: PageMode) {
+        self.pageMode = pageMode
+        super.init(nibName: nil, bundle: nil)
+    }
+    
     @IBOutlet weak var collectionView: UICollectionView!
     
     let ROW_ITEM_COUNT = 3
     let ITEM_SPACE = 8
     
     var pageMode = PageMode.view
+    var selectionEnabled = false {
+        didSet {
+            if selectionEnabled {
+                navigationItem.rightBarButtonItem = cancelBarButton
+            }
+            else {
+                navigationItem.rightBarButtonItem = selectBarButton
+            }
+            if addBarButton != nil {
+                addBarButton.isEnabled = !selectionEnabled
+            }
+        }
+    }
     var searchText = ""
     
     var editBarButton: UIBarButtonItem!
@@ -62,6 +88,10 @@ class ClassesViewController: BaseViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        if pageMode == .edit {
+            prepareBarButtonItems()
+        }
+        
         classes.append(Classroom(id: 0, name: "12 Fen - A", selected: false))
         classes.append(Classroom(id: 0, name: "12 Fen - B", selected: false))
         classes.append(Classroom(id: 0, name: "12 Fen - C", selected: false))
@@ -76,16 +106,16 @@ class ClassesViewController: BaseViewController {
         classes.append(Classroom(id: 0, name: "11 Fen - E", selected: false))
         classes.append(Classroom(id: 0, name: "11 TM - A", selected: false))
         
+        let longPressCollectionViewGesture = UILongPressGestureRecognizer(target: self, action: #selector(collectionViewLongPress(gesture:)))
+        collectionView.addGestureRecognizer(longPressCollectionViewGesture)
+        
         searchController.searchResultsUpdater = self
         searchController.obscuresBackgroundDuringPresentation = false
-        definesPresentationContext = true
         navigationItem.searchController = searchController
         
         collectionView.register(ClassCollectionViewCell.nib, forCellWithReuseIdentifier: ClassCollectionViewCell.identifier)
         collectionView.delegate = self
         collectionView.dataSource = self
-        
-        prepareBarButtonItems()
     }
     
     override func setText() {
@@ -93,33 +123,29 @@ class ClassesViewController: BaseViewController {
         searchController.searchBar.placeholder = "Ara".localized()
     }
     
-    func prepareBarButtonItems() {
-        editBarButton = UIBarButtonItem(barButtonSystemItem: .edit, target: self, action: #selector(editBarButtonItemTapped))
-        doneBarButton = UIBarButtonItem(barButtonSystemItem: .done, target: self, action: #selector(doneBarButtonItemTapped))
-        flexibleSpace = UIBarButtonItem(barButtonSystemItem: .flexibleSpace, target: self, action: nil)
-        deleteBarButton = UIBarButtonItem(barButtonSystemItem: .trash, target: self, action: #selector(deleteBarButtonItemTapped))
-        deleteBarButton.isEnabled = false
-        addBarButton = UIBarButtonItem(barButtonSystemItem: .add, target: self, action: #selector(addBarButtonItemTapped))
-        selectBarButton = UIBarButtonItem(title: "Seç".localized(), style: .plain, target: self, action: #selector(selectBarButtonItemTapped))
-        cancelBarButton = UIBarButtonItem(barButtonSystemItem: .cancel, target: self, action: #selector(cancelBarButtonItemTapped))
-        
-        navigationItem.rightBarButtonItem = editBarButton
+    override func viewWillDisappear(_ animated: Bool) {
+        navigationController?.setToolbarHidden(true, animated: true)
     }
     
-    @objc func editBarButtonItemTapped() {
-        pageMode = .edit
-        navigationItem.rightBarButtonItem = doneBarButton
-        setToolbarItems([addBarButton, flexibleSpace, selectBarButton], animated: true)
+    func prepareBarButtonItems() {
+        selectBarButton = UIBarButtonItem(title: "Seç".localized(), style: .plain, target: self, action: #selector(selectBarButtonItemTapped))
+        cancelBarButton = UIBarButtonItem(barButtonSystemItem: .cancel, target: self, action: #selector(cancelBarButtonItemTapped))
+        deleteBarButton = UIBarButtonItem(barButtonSystemItem: .trash, target: self, action: #selector(deleteBarButtonItemTapped))
+        addBarButton = UIBarButtonItem(barButtonSystemItem: .add, target: self, action: #selector(addBarButtonItemTapped))
+        doneBarButton = UIBarButtonItem(barButtonSystemItem: .done, target: self, action: #selector(doneBarButtonItemTapped))
+        flexibleSpace = UIBarButtonItem(barButtonSystemItem: .flexibleSpace, target: self, action: nil)
+        
+        navigationItem.rightBarButtonItem = selectBarButton
+        setToolbarItems([deleteBarButton, flexibleSpace, addBarButton, flexibleSpace, doneBarButton], animated: true)
         navigationController?.setToolbarHidden(false, animated: true)
     }
     
     @objc func doneBarButtonItemTapped() {
-        pageMode = .view
-        navigationItem.rightBarButtonItem = editBarButton
-        navigationController?.setToolbarHidden(true, animated: true)
+        popViewController()
     }
     
     @objc func deleteBarButtonItemTapped() {
+        selectionEnabled = false
         let deletedItems = classes.filter({ item -> Bool in
             item.selected && item.id != 0
         })
@@ -165,19 +191,61 @@ class ClassesViewController: BaseViewController {
     }
     
     @objc func selectBarButtonItemTapped() {
-        pageMode = .select
-        navigationItem.rightBarButtonItem = nil
-        setToolbarItems([deleteBarButton, flexibleSpace, cancelBarButton], animated: true)
+        selectionEnabled = true
     }
     
     @objc func cancelBarButtonItemTapped() {
-        pageMode = .edit
-        navigationItem.rightBarButtonItem = doneBarButton
-        deleteBarButton.isEnabled = false
-        setToolbarItems([addBarButton, flexibleSpace, selectBarButton], animated: true)
+        selectionEnabled = false
         for i in 0..<classes.count {
             classes[i].selected = false
         }
+    }
+    
+    @objc func collectionViewLongPress(gesture: UILongPressGestureRecognizer!) {
+        if selectionEnabled {
+            return
+        }
+        
+        let point = gesture.location(in: self.collectionView)
+        
+        guard let indexPath = collectionView.indexPathForItem(at: point) else { return }
+        let index = findArrayIndex(indexPath)
+        selectionEnabled = true
+        classes[index].selected = !classes[index].selected
+    }
+    
+    func editClass(arrayIndex: Int) {
+        let alert = UIAlertController(title: "Sınıf Düzenle".localized(), message: nil, preferredStyle: .alert)
+        
+        alert.addTextField { textField in
+            textField.placeholder = "Sınıf Adı".localized()
+            textField.text = self.classes[arrayIndex].name
+        }
+        
+        let button = UIAlertAction(title: "Tamam".localized(), style: .default) { _ in
+            let newClassName = alert.textFields?[0].text?.trimmingCharacters(in: .whitespacesAndNewlines) ?? ""
+            
+            if newClassName.isEmpty {
+                self.showAlert(message: "Sınıf ismi boş olmamalı.".localized())
+                return
+            }
+            
+            if !self.classes.filter({ item -> Bool in
+                item.name.lowercased() == newClassName.lowercased()
+            }).isEmpty {
+                self.showAlert(message: "Bu isimde bir sınıf zaten var.".localized())
+                return
+            }
+            self.classes[arrayIndex].name = newClassName
+        }
+        
+        alert.addAction(button)
+        
+        let cancelButton = UIAlertAction(title: "İptal".localized(), style: .cancel) { _ in
+            
+        }
+        alert.addAction(cancelButton)
+        presentViewController(viewController: alert)
     }
     
     func searchBarIsEmpty() -> Bool {
@@ -218,15 +286,20 @@ class ClassesViewController: BaseViewController {
 extension ClassesViewController: UICollectionViewDelegate, UICollectionViewDataSource, UICollectionViewDelegateFlowLayout {
     
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+        let index = findArrayIndex(indexPath)
         switch pageMode {
         case .view:
             let viewController = ClassDetailViewController()
             pushViewController(viewController: viewController)
         case .select:
-            let index = findArrayIndex(indexPath)
-            classes[index].selected = !classes[index].selected
-        case .edit:
             break
+        case .edit:
+            if selectionEnabled {
+                classes[index].selected = !classes[index].selected
+            }
+            else {
+                editClass(arrayIndex: index)
+            }
         }
     }
     

@@ -12,10 +12,10 @@ import CircleMenu
 class HomeViewController: BaseViewController {
 
     var buttons: [(icon: String, color: UIColor, pageId: Int)] = []
-    let CLASS_MESSAGE = 0
-    let STUDENT_MESSAGE = 1
-    let EDIT_CLASS_AND_USER = 2
-    let EDIT_TEACHER = 3
+    let GROUP_MESSAGE = 0
+    let PERSONAL_MESSAGE = 1
+    let ROLL_CALL = 2
+    let SETTINGS = 3
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -24,12 +24,10 @@ class HomeViewController: BaseViewController {
         
         switch userType {
         case .admin:
-            buttons = [("user", UIColor.messageButton, CLASS_MESSAGE),
-                       ("inspection", UIColor.rollCallButton, STUDENT_MESSAGE),
-                       ("multiple-users", UIColor.groupMessageButton, EDIT_CLASS_AND_USER),
-                       ("user", UIColor.messageButton, EDIT_TEACHER),
-                       ("inspection", UIColor.rollCallButton, 0),
-                       ("multiple-users", UIColor.groupMessageButton, 0)]
+            buttons = [("personal-message", UIColor.rollCallButton, PERSONAL_MESSAGE),
+                       ("group-message", UIColor.messageButton, GROUP_MESSAGE),
+                       ("roll-call", UIColor.groupMessageButton, ROLL_CALL),
+                       ("settings", UIColor.messageButton, SETTINGS)]
         case .teacher:
             break
         case .parent:
@@ -40,7 +38,7 @@ class HomeViewController: BaseViewController {
         let button = CircleMenu(
             frame: CGRect(x: view.frame.width / 2 - 25, y: view.frame.height / 2 - 25, width: 50, height: 50),
             normalIcon: "logo",
-            selectedIcon: "logo",
+            selectedIcon: nil,
             buttonsCount: buttons.count,
             duration: 1,
             distance: 120)
@@ -64,8 +62,7 @@ extension HomeViewController: CircleMenuDelegate {
     // configure buttons
     func circleMenu(_ circleMenu: CircleMenu, willDisplay button: UIButton, atIndex: Int) {
         button.backgroundColor = buttons[atIndex].color
-        button.setTitle(atIndex.description, for: .normal)
-//        button.setImage(UIImage(named: buttons[atIndex].icon), for: .normal)
+        button.setImage(UIImage(named: buttons[atIndex].icon), for: .normal)
     }
     
     // call before animation
@@ -73,14 +70,14 @@ extension HomeViewController: CircleMenuDelegate {
         
         let pageId = buttons[atIndex].pageId
         switch pageId {
-        case CLASS_MESSAGE:
+        case PERSONAL_MESSAGE:
             pushViewController(viewController: MessagesViewController())
-        case STUDENT_MESSAGE:
+        case GROUP_MESSAGE:
             pushViewController(viewController: MessagesViewController())
-        case EDIT_CLASS_AND_USER:
+        case ROLL_CALL:
             pushViewController(viewController: ClassesViewController())
-        case EDIT_TEACHER:
-            pushViewController(viewController: TeachersViewController())
+        case SETTINGS:
+            pushViewController(viewController: SettingsViewController())
         default:
             break
         }

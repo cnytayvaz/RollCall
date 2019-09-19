@@ -25,11 +25,8 @@
             <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
-                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="background" translatesAutoresizingMaskIntoConstraints="NO" id="43d-qg-g6v">
-                    <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
-                </imageView>
                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="FzM-AG-Ly9">
-                    <rect key="frame" x="80" y="367" width="254" height="162"/>
+                    <rect key="frame" x="80" y="372" width="254" height="162"/>
                     <subviews>
                         <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="line" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="YAW-1e-Akh">
                             <rect key="frame" x="8" y="8" width="238" height="21"/>
@@ -84,11 +81,7 @@
             </subviews>
             <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
             <constraints>
-                <constraint firstItem="FzM-AG-Ly9" firstAttribute="centerY" secondItem="43d-qg-g6v" secondAttribute="centerY" id="0XY-7X-L1B"/>
-                <constraint firstItem="43d-qg-g6v" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" id="DAF-2w-HhC"/>
-                <constraint firstAttribute="bottom" secondItem="43d-qg-g6v" secondAttribute="bottom" id="EY1-d0-dsc"/>
-                <constraint firstItem="43d-qg-g6v" firstAttribute="trailing" secondItem="fnl-2z-Ty3" secondAttribute="trailing" id="L6v-Ku-hGp"/>
-                <constraint firstItem="43d-qg-g6v" firstAttribute="top" secondItem="i5M-Pr-FkT" secondAttribute="top" id="TqZ-iB-CYy"/>
+                <constraint firstItem="FzM-AG-Ly9" firstAttribute="centerY" secondItem="fnl-2z-Ty3" secondAttribute="centerY" id="95B-zM-ptT"/>
                 <constraint firstItem="FzM-AG-Ly9" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" constant="80" id="YSq-6c-USC"/>
                 <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="FzM-AG-Ly9" secondAttribute="trailing" constant="80" id="xzk-4A-oU7"/>
             </constraints>
@@ -96,7 +89,4 @@
             <point key="canvasLocation" x="47.826086956521742" y="35.491071428571423"/>
         </view>
     </objects>
-    <resources>
-        <image name="background" width="459" height="813"/>
-    </resources>
 </document>

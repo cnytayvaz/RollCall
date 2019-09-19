@@ -26,6 +26,10 @@
 		11053C552320E9AD00D62C03 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11053C542320E9AD00D62C03 /* Constants.swift */; };
 		11053C572320E9FA00D62C03 /* NetworkManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11053C562320E9FA00D62C03 /* NetworkManager.swift */; };
 		11053C592320EA0F00D62C03 /* ServiceEndPoint.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11053C582320EA0F00D62C03 /* ServiceEndPoint.swift */; };
+		11073BA82333939D00F6C3F6 /* SettingsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11073BA62333939D00F6C3F6 /* SettingsViewController.swift */; };
+		11073BA92333939D00F6C3F6 /* SettingsViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 11073BA72333939D00F6C3F6 /* SettingsViewController.xib */; };
+		11073BAD2333955C00F6C3F6 /* SettingsTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11073BAB2333955C00F6C3F6 /* SettingsTableViewCell.swift */; };
+		11073BAE2333955C00F6C3F6 /* SettingsTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 11073BAC2333955C00F6C3F6 /* SettingsTableViewCell.xib */; };
 		110C29252322249A0015C299 /* LocalizationManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 110C29242322249A0015C299 /* LocalizationManager.swift */; };
 		110C292B232225C90015C299 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = 110C292D232225C90015C299 /* Localizable.strings */; };
 		110C29312322276C0015C299 /* StringExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 110C29302322276C0015C299 /* StringExtension.swift */; };
@@ -79,6 +83,10 @@
 		11053C542320E9AD00D62C03 /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
 		11053C562320E9FA00D62C03 /* NetworkManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkManager.swift; sourceTree = "<group>"; };
 		11053C582320EA0F00D62C03 /* ServiceEndPoint.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ServiceEndPoint.swift; sourceTree = "<group>"; };
+		11073BA62333939D00F6C3F6 /* SettingsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsViewController.swift; sourceTree = "<group>"; };
+		11073BA72333939D00F6C3F6 /* SettingsViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SettingsViewController.xib; sourceTree = "<group>"; };
+		11073BAB2333955C00F6C3F6 /* SettingsTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsTableViewCell.swift; sourceTree = "<group>"; };
+		11073BAC2333955C00F6C3F6 /* SettingsTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SettingsTableViewCell.xib; sourceTree = "<group>"; };
 		110C29242322249A0015C299 /* LocalizationManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocalizationManager.swift; sourceTree = "<group>"; };
 		110C292C232225C90015C299 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/Localizable.strings; sourceTree = "<group>"; };
 		110C292E232225D00015C299 /* tr */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = tr; path = tr.lproj/Localizable.strings; sourceTree = "<group>"; };
@@ -139,6 +147,7 @@
 				110274AD2328CFA500BDD829 /* Successful */,
 				110274B52328D38F00BDD829 /* SelectSchool */,
 				11F02921232BADE6004461F9 /* Teachers */,
+				11073BAA233394E400F6C3F6 /* Settings */,
 			);
 			path = ViewController;
 			sourceTree = "<group>";
@@ -262,6 +271,17 @@
 				11053C582320EA0F00D62C03 /* ServiceEndPoint.swift */,
 			);
 			path = Network;
+			sourceTree = "<group>";
+		};
+		11073BAA233394E400F6C3F6 /* Settings */ = {
+			isa = PBXGroup;
+			children = (
+				11073BA62333939D00F6C3F6 /* SettingsViewController.swift */,
+				11073BA72333939D00F6C3F6 /* SettingsViewController.xib */,
+				11073BAB2333955C00F6C3F6 /* SettingsTableViewCell.swift */,
+				11073BAC2333955C00F6C3F6 /* SettingsTableViewCell.xib */,
+			);
+			path = Settings;
 			sourceTree = "<group>";
 		};
 		110C2926232224D40015C299 /* Localization */ = {
@@ -417,9 +437,11 @@
 			buildActionMask = 2147483647;
 			files = (
 				11F02925232BAE04004461F9 /* TeacherTableViewCell.xib in Resources */,
+				11073BA92333939D00F6C3F6 /* SettingsViewController.xib in Resources */,
 				110C292B232225C90015C299 /* Localizable.strings in Resources */,
 				110C294723224F230015C299 /* ClassCollectionViewCell.xib in Resources */,
 				11F02920232BADE1004461F9 /* TeachersViewController.xib in Resources */,
+				11073BAE2333955C00F6C3F6 /* SettingsTableViewCell.xib in Resources */,
 				110274B92328D4B700BDD829 /* SchoolTableViewCell.xib in Resources */,
 				110274AF2328D26100BDD829 /* check-animation.json in Resources */,
 				1110EAF72327ACDA009692E4 /* MessagesViewController.xib in Resources */,
@@ -495,6 +517,7 @@
 				1110EAFF2327CD7D009692E4 /* HomeViewController.swift in Sources */,
 				110274C02328DD7800BDD829 /* UserManager.swift in Sources */,
 				11053C592320EA0F00D62C03 /* ServiceEndPoint.swift in Sources */,
+				11073BAD2333955C00F6C3F6 /* SettingsTableViewCell.swift in Sources */,
 				110C293523222BA70015C299 /* ExtensionUIView.swift in Sources */,
 				110274AB2328CF9E00BDD829 /* SuccessfulViewController.swift in Sources */,
 				110274C32328FCDD00BDD829 /* PageMode.swift in Sources */,
@@ -505,6 +528,7 @@
 				11053C532320E8C800D62C03 /* ExtensionUIViewController.swift in Sources */,
 				110274B82328D4B700BDD829 /* SchoolTableViewCell.swift in Sources */,
 				11F02924232BAE04004461F9 /* TeacherTableViewCell.swift in Sources */,
+				11073BA82333939D00F6C3F6 /* SettingsViewController.swift in Sources */,
 				110C2933232229510015C299 /* BaseViewController.swift in Sources */,
 				1110EAFB2327AD04009692E4 /* MessageTableViewCell.swift in Sources */,
 				110274A12328BAC600BDD829 /* RegisterSchoolViewController.swift in Sources */,

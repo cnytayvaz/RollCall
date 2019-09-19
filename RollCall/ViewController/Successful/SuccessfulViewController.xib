@@ -24,11 +24,8 @@
             <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
-                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="background" translatesAutoresizingMaskIntoConstraints="NO" id="Irg-HA-cky">
-                    <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
-                </imageView>
                 <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="c6X-Qy-tTA">
-                    <rect key="frame" x="80" y="270.5" width="254" height="355"/>
+                    <rect key="frame" x="80" y="275.5" width="254" height="355"/>
                     <subviews>
                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="i4I-tz-i71">
                             <rect key="frame" x="0.0" y="0.0" width="254" height="26.5"/>
@@ -60,18 +57,11 @@
             </subviews>
             <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
             <constraints>
-                <constraint firstItem="Irg-HA-cky" firstAttribute="trailing" secondItem="fnl-2z-Ty3" secondAttribute="trailing" id="76a-sD-jJS"/>
                 <constraint firstItem="c6X-Qy-tTA" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" constant="80" id="DIY-PJ-ABA"/>
-                <constraint firstAttribute="bottom" secondItem="Irg-HA-cky" secondAttribute="bottom" id="N8i-DR-Hmx"/>
-                <constraint firstItem="Irg-HA-cky" firstAttribute="top" secondItem="i5M-Pr-FkT" secondAttribute="top" id="XXq-gr-RID"/>
-                <constraint firstItem="Irg-HA-cky" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" id="h7w-mQ-9OK"/>
+                <constraint firstItem="c6X-Qy-tTA" firstAttribute="centerY" secondItem="fnl-2z-Ty3" secondAttribute="centerY" id="LvV-8E-Zsf"/>
                 <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="c6X-Qy-tTA" secondAttribute="trailing" constant="80" id="hby-GR-O1T"/>
-                <constraint firstItem="c6X-Qy-tTA" firstAttribute="centerY" secondItem="Irg-HA-cky" secondAttribute="centerY" id="htD-ov-1kz"/>
             </constraints>
             <viewLayoutGuide key="safeArea" id="fnl-2z-Ty3"/>
         </view>
     </objects>
-    <resources>
-        <image name="background" width="459" height="813"/>
-    </resources>
 </document>
