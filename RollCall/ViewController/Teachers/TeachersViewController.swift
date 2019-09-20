@@ -10,10 +10,37 @@ import UIKit
 
 class TeachersViewController: BaseViewController {
     
+    enum PageMode {
+        case view
+        case edit
+    }
+    
+    required init?(coder aDecoder: NSCoder) {
+        fatalError("init(coder:) has not been implemented")
+    }
+    
+    init(with pageMode: PageMode = .view) {
+        self.pageMode = pageMode
+        super.init(nibName: nil, bundle: nil)
+    }
+    
     @IBOutlet weak var tableView: UITableView!
     @IBOutlet weak var tableViewHeightConstraint: NSLayoutConstraint!
     
     var pageMode = PageMode.view
+    var selectionEnabled = false {
+        didSet {
+            if selectionEnabled {
+                navigationItem.rightBarButtonItem = cancelBarButton
+            }
+            else {
+                navigationItem.rightBarButtonItem = selectBarButton
+            }
+            if addBarButton != nil {
+                addBarButton.isEnabled = !selectionEnabled
+            }
+        }
+    }
     var searchText = ""
     
     var editBarButton: UIBarButtonItem!
@@ -54,6 +81,12 @@ class TeachersViewController: BaseViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        if pageMode == .edit {
+            prepareBarButtonItems()
+            let longPressTableViewGesture = UILongPressGestureRecognizer(target: self, action: #selector(tableViewLongPress(gesture:)))
+            tableView.addGestureRecognizer(longPressTableViewGesture)
+        }
 
         // Do any additional setup after loading the view.
         users.append(User(id: 0, tc: "100", no: "100", name: "Cüneyt AYVAZ", phone: "0545 000 00 00", selected: false))
@@ -68,8 +101,6 @@ class TeachersViewController: BaseViewController {
         tableView.register(TeacherTableViewCell.nib, forCellReuseIdentifier: TeacherTableViewCell.identifier)
         tableView.delegate = self
         tableView.dataSource = self
-        
-        prepareBarButtonItems()
     }
     
     override func setText() {
@@ -81,33 +112,29 @@ class TeachersViewController: BaseViewController {
         tableViewHeightConstraint.constant = tableView.contentSize.height
     }
     
-    func prepareBarButtonItems() {
-        editBarButton = UIBarButtonItem(barButtonSystemItem: .edit, target: self, action: #selector(editBarButtonItemTapped))
-        doneBarButton = UIBarButtonItem(barButtonSystemItem: .done, target: self, action: #selector(doneBarButtonItemTapped))
-        flexibleSpace = UIBarButtonItem(barButtonSystemItem: .flexibleSpace, target: self, action: nil)
-        deleteBarButton = UIBarButtonItem(barButtonSystemItem: .trash, target: self, action: #selector(deleteBarButtonItemTapped))
-        deleteBarButton.isEnabled = false
-        addBarButton = UIBarButtonItem(barButtonSystemItem: .add, target: self, action: #selector(addBarButtonItemTapped))
-        selectBarButton = UIBarButtonItem(title: "Seç".localized(), style: .plain, target: self, action: #selector(selectBarButtonItemTapped))
-        cancelBarButton = UIBarButtonItem(barButtonSystemItem: .cancel, target: self, action: #selector(cancelBarButtonItemTapped))
-        
-        navigationItem.rightBarButtonItem = editBarButton
+    override func viewWillDisappear(_ animated: Bool) {
+        navigationController?.setToolbarHidden(true, animated: true)
     }
     
-    @objc func editBarButtonItemTapped() {
-        pageMode = .edit
-        navigationItem.rightBarButtonItem = doneBarButton
-        setToolbarItems([addBarButton, flexibleSpace, selectBarButton], animated: true)
+    func prepareBarButtonItems() {
+        selectBarButton = UIBarButtonItem(title: "Seç".localized(), style: .plain, target: self, action: #selector(selectBarButtonItemTapped))
+        cancelBarButton = UIBarButtonItem(barButtonSystemItem: .cancel, target: self, action: #selector(cancelBarButtonItemTapped))
+        deleteBarButton = UIBarButtonItem(barButtonSystemItem: .trash, target: self, action: #selector(deleteBarButtonItemTapped))
+        addBarButton = UIBarButtonItem(barButtonSystemItem: .add, target: self, action: #selector(addBarButtonItemTapped))
+        doneBarButton = UIBarButtonItem(barButtonSystemItem: .done, target: self, action: #selector(doneBarButtonItemTapped))
+        flexibleSpace = UIBarButtonItem(barButtonSystemItem: .flexibleSpace, target: self, action: nil)
+        
+        navigationItem.rightBarButtonItem = selectBarButton
+        setToolbarItems([deleteBarButton, flexibleSpace, addBarButton, flexibleSpace, doneBarButton], animated: true)
         navigationController?.setToolbarHidden(false, animated: true)
     }
     
     @objc func doneBarButtonItemTapped() {
-        pageMode = .view
-        navigationItem.rightBarButtonItem = editBarButton
-        navigationController?.setToolbarHidden(true, animated: true)
+        popViewController()
     }
     
     @objc func deleteBarButtonItemTapped() {
+        selectionEnabled = false
         let deletedItems = users.filter({ item -> Bool in
             item.selected && item.id != 0
         })
@@ -171,19 +198,85 @@ class TeachersViewController: BaseViewController {
     }
     
     @objc func selectBarButtonItemTapped() {
-        pageMode = .select
-        navigationItem.rightBarButtonItem = nil
-        setToolbarItems([deleteBarButton, flexibleSpace, cancelBarButton], animated: true)
+        selectionEnabled = true
     }
     
     @objc func cancelBarButtonItemTapped() {
-        pageMode = .edit
-        navigationItem.rightBarButtonItem = doneBarButton
-        deleteBarButton.isEnabled = false
-        setToolbarItems([addBarButton, flexibleSpace, selectBarButton], animated: true)
+        selectionEnabled = false
         for i in 0..<users.count {
             users[i].selected = false
         }
+    }
+    
+    @objc func tableViewLongPress(gesture: UILongPressGestureRecognizer!) {
+        if selectionEnabled {
+            return
+        }
+        
+        let point = gesture.location(in: self.tableView)
+        
+        guard let indexPath = tableView.indexPathForRow(at: point) else { return }
+        let index = findArrayIndex(indexPath)
+        selectionEnabled = true
+        users[index].selected = !users[index].selected
+    }
+    
+    func editUser(arrayIndex: Int) {
+        
+        let alert = UIAlertController(title: "Öğretmen Düzenle".localized(), message: nil, preferredStyle: .alert)
+        
+        alert.addTextField { textField in
+            textField.placeholder = "Öğretmen Tc Kimlik No".localized()
+            textField.text = self.users[arrayIndex].tc
+            textField.isEnabled = false
+        }
+        alert.addTextField { textField in
+            textField.placeholder = "Öğretmen Adı".localized()
+            textField.text = self.users[arrayIndex].name
+        }
+        alert.addTextField { textField in
+            textField.placeholder = "Öğretmen Tel".localized()
+            textField.text = self.users[arrayIndex].phone
+        }
+        
+        let button = UIAlertAction(title: "Tamam".localized(), style: .default) { _ in
+            let newUserTc = alert.textFields?[0].text?.trimmingCharacters(in: .whitespacesAndNewlines) ?? ""
+            let newUserName = alert.textFields?[1].text?.trimmingCharacters(in: .whitespacesAndNewlines) ?? ""
+            let newUserPhone = alert.textFields?[2].text?.trimmingCharacters(in: .whitespacesAndNewlines) ?? ""
+            
+            if newUserTc.isEmpty {
+                self.showAlert(message: "Öğretmen Tc Kimlik No boş olmamalı.".localized())
+                return
+            }
+            
+            if newUserName.isEmpty {
+                self.showAlert(message: "Öğretmen ismi boş olmamalı.".localized())
+                return
+            }
+            
+            if newUserPhone.isEmpty {
+                self.showAlert(message: "Öğretmen telefon numarası boş olmamalı.".localized())
+                return
+            }
+            
+            if !self.users.filter({ item -> Bool in
+                item.tc.lowercased() == newUserTc.lowercased()
+            }).isEmpty {
+                self.showAlert(message: "Bu Tc Kimlik Numarası zaten var.".localized())
+                return
+            }
+            self.users[arrayIndex].tc = newUserTc
+            self.users[arrayIndex].name = newUserName
+            self.users[arrayIndex].phone = newUserPhone
+        }
+        
+        alert.addAction(button)
+        
+        let cancelButton = UIAlertAction(title: "İptal".localized(), style: .cancel) { _ in
+            
+        }
+        alert.addAction(cancelButton)
+        presentViewController(viewController: alert)
     }
     
     func searchBarIsEmpty() -> Bool {
@@ -223,14 +316,17 @@ class TeachersViewController: BaseViewController {
 extension TeachersViewController: UITableViewDelegate, UITableViewDataSource {
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        let index = findArrayIndex(indexPath)
         switch pageMode {
         case .view:
             break
-        case .select:
-            let index = findArrayIndex(indexPath)
-            users[index].selected = !users[index].selected
         case .edit:
-            break
+            if selectionEnabled {
+                users[index].selected = !users[index].selected
+            }
+            else {
+                editUser(arrayIndex: index)
+            }
         }
     }
     

@@ -62,9 +62,9 @@ extension SettingsViewController: UITableViewDelegate, UITableViewDataSource {
         case EDIT_CLASS:
             pushViewController(viewController: ClassesViewController(with: .edit))
         case EDIT_STUDENT:
-            pushViewController(viewController: ClassesViewController())
+            pushViewController(viewController: ClassesViewController(with: .singleSelection, target: self))
         case EDIT_TEACHER:
-            break
+            pushViewController(viewController: TeachersViewController(with: .edit))
         case CHANGE_PASSWORD:
             break
         case CHANGE_LANGUAGE:
@@ -90,5 +90,12 @@ extension SettingsViewController: UITableViewDelegate, UITableViewDataSource {
         let cell = tableView.dequeueReusableCell(withIdentifier: SettingsTableViewCell.identifier, for: indexPath) as! SettingsTableViewCell
         cell.configure(with: settingItems[indexPath.row])
         return cell
+    }
+}
+
+extension SettingsViewController: ClassSelectionDelegate {
+    
+    func didSelect(class: Classroom) {
+        pushViewController(viewController: ClassDetailViewController(with: .edit))
     }
 }

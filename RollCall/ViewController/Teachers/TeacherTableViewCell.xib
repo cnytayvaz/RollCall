@@ -29,7 +29,7 @@
                         <rect key="frame" x="0.0" y="0.0" width="320" height="43.5"/>
                         <subviews>
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="circle" translatesAutoresizingMaskIntoConstraints="NO" id="fqr-sM-kXl">
-                                <rect key="frame" x="300" y="23.5" width="12" height="12"/>
+                                <rect key="frame" x="300" y="16" width="12" height="12"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="12" id="ZxJ-yG-UJl"/>
                                     <constraint firstAttribute="height" constant="12" id="vi5-9A-yL4"/>
@@ -39,7 +39,7 @@
                         <color key="backgroundColor" white="0.0" alpha="0.29999999999999999" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
                             <constraint firstAttribute="trailing" secondItem="fqr-sM-kXl" secondAttribute="trailing" constant="8" id="40R-mi-Af0"/>
-                            <constraint firstAttribute="bottom" secondItem="fqr-sM-kXl" secondAttribute="bottom" constant="8" id="kvQ-QK-e8s"/>
+                            <constraint firstItem="fqr-sM-kXl" firstAttribute="centerY" secondItem="Jta-rG-NJi" secondAttribute="centerY" id="uEw-zN-yZr"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="Jta-rG-NJi"/>
                     </view>

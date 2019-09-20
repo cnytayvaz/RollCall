@@ -6,7 +6,6 @@
 //  Copyright © 2019 Cüneyt AYVAZ. All rights reserved.
 //
 
-import Foundation
 import UIKit
 
 class Util {

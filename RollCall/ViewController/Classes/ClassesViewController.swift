@@ -14,18 +14,34 @@ struct Classroom {
     var selected = false
 }
 
+protocol ClassSelectionDelegate {
+    func didSelect(class: Classroom)
+    func didSelect(classes: [Classroom])
+}
+
+extension ClassSelectionDelegate {
+    
+    func didSelect(class: Classroom) { }
+    
+    func didSelect(classes: [Classroom]) { }
+}
+
 class ClassesViewController: BaseViewController {
+    
+    enum PageMode {
+        case view
+        case edit
+        case singleSelection
+        case multiSelection
+    }
     
     required init?(coder aDecoder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
     }
     
-    init() {
-        super.init(nibName: nil, bundle: nil)
-    }
-    
-    init(with pageMode: PageMode) {
+    init(with pageMode: PageMode = .view, target: ClassSelectionDelegate? = nil) {
         self.pageMode = pageMode
+        self.delegate = target
         super.init(nibName: nil, bundle: nil)
     }
     
@@ -33,6 +49,8 @@ class ClassesViewController: BaseViewController {
     
     let ROW_ITEM_COUNT = 3
     let ITEM_SPACE = 8
+    
+    var delegate: ClassSelectionDelegate?
     
     var pageMode = PageMode.view
     var selectionEnabled = false {
@@ -90,6 +108,8 @@ class ClassesViewController: BaseViewController {
         
         if pageMode == .edit {
             prepareBarButtonItems()
+            let longPressCollectionViewGesture = UILongPressGestureRecognizer(target: self, action: #selector(collectionViewLongPress(gesture:)))
+            collectionView.addGestureRecognizer(longPressCollectionViewGesture)
         }
         
         classes.append(Classroom(id: 0, name: "12 Fen - A", selected: false))
@@ -105,9 +125,6 @@ class ClassesViewController: BaseViewController {
         classes.append(Classroom(id: 0, name: "11 Fen - D", selected: false))
         classes.append(Classroom(id: 0, name: "11 Fen - E", selected: false))
         classes.append(Classroom(id: 0, name: "11 TM - A", selected: false))
-        
-        let longPressCollectionViewGesture = UILongPressGestureRecognizer(target: self, action: #selector(collectionViewLongPress(gesture:)))
-        collectionView.addGestureRecognizer(longPressCollectionViewGesture)
         
         searchController.searchResultsUpdater = self
         searchController.obscuresBackgroundDuringPresentation = false
@@ -291,8 +308,6 @@ extension ClassesViewController: UICollectionViewDelegate, UICollectionViewDataS
         case .view:
             let viewController = ClassDetailViewController()
             pushViewController(viewController: viewController)
-        case .select:
-            break
         case .edit:
             if selectionEnabled {
                 classes[index].selected = !classes[index].selected
@@ -300,6 +315,10 @@ extension ClassesViewController: UICollectionViewDelegate, UICollectionViewDataS
             else {
                 editClass(arrayIndex: index)
             }
+        case .singleSelection:
+            delegate?.didSelect(class: classes[index])
+        case .multiSelection:
+            break
         }
     }
     
