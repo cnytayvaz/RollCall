@@ -113,7 +113,9 @@ class TeachersViewController: BaseViewController {
     }
     
     override func viewWillDisappear(_ animated: Bool) {
-        navigationController?.setToolbarHidden(true, animated: true)
+        if pageMode == .edit {
+            navigationController?.setToolbarHidden(true, animated: true)
+        }
     }
     
     func prepareBarButtonItems() {
