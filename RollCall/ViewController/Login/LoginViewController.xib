@@ -1,11 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="14490.70" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
-    <device id="retina6_1" orientation="portrait">
-        <adaptation id="fullscreen"/>
-    </device>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="14868" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14490.49"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14824"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -25,50 +23,33 @@
             <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
-                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="6LX-Tj-ajf">
-                    <rect key="frame" x="80" y="386.5" width="254" height="133"/>
+                <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="8tZ-Yh-NIT">
+                    <rect key="frame" x="80" y="388.5" width="254" height="129"/>
                     <subviews>
                         <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="line" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Dms-65-eyl">
-                            <rect key="frame" x="8" y="8" width="238" height="21"/>
-                            <nil key="textColor"/>
+                            <rect key="frame" x="0.0" y="0.0" width="254" height="25"/>
                             <fontDescription key="fontDescription" type="system" pointSize="14"/>
                             <textInputTraits key="textInputTraits" keyboardType="numberPad"/>
                         </textField>
                         <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="line" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="3X6-bA-Ldo">
-                            <rect key="frame" x="8" y="37" width="238" height="21"/>
-                            <nil key="textColor"/>
+                            <rect key="frame" x="0.0" y="33" width="254" height="25"/>
                             <fontDescription key="fontDescription" type="system" pointSize="14"/>
                             <textInputTraits key="textInputTraits" keyboardType="numberPad"/>
                         </textField>
                         <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="line" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="UBm-fb-YC3">
-                            <rect key="frame" x="8" y="66" width="238" height="21"/>
-                            <nil key="textColor"/>
+                            <rect key="frame" x="0.0" y="66" width="254" height="25"/>
                             <fontDescription key="fontDescription" type="system" pointSize="14"/>
                             <textInputTraits key="textInputTraits" secureTextEntry="YES"/>
                         </textField>
                         <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="L4H-SM-v7T">
-                            <rect key="frame" x="200" y="95" width="46" height="30"/>
+                            <rect key="frame" x="0.0" y="99" width="254" height="30"/>
                             <state key="normal" title="Button"/>
                             <connections>
                                 <action selector="loginButtonTapped:" destination="-1" eventType="touchUpInside" id="uDc-ox-oC6"/>
                             </connections>
                         </button>
                     </subviews>
-                    <constraints>
-                        <constraint firstItem="Dms-65-eyl" firstAttribute="leading" secondItem="6LX-Tj-ajf" secondAttribute="leading" constant="8" id="5sH-Eb-0qh"/>
-                        <constraint firstItem="3X6-bA-Ldo" firstAttribute="top" secondItem="Dms-65-eyl" secondAttribute="bottom" constant="8" id="7vu-iw-uln"/>
-                        <constraint firstItem="L4H-SM-v7T" firstAttribute="top" secondItem="UBm-fb-YC3" secondAttribute="bottom" constant="8" id="Ady-tJ-3NE"/>
-                        <constraint firstItem="Dms-65-eyl" firstAttribute="top" secondItem="6LX-Tj-ajf" secondAttribute="top" constant="8" id="Fa0-B2-IkN"/>
-                        <constraint firstItem="UBm-fb-YC3" firstAttribute="top" secondItem="3X6-bA-Ldo" secondAttribute="bottom" constant="8" id="G3G-Vc-mFm"/>
-                        <constraint firstAttribute="bottom" secondItem="L4H-SM-v7T" secondAttribute="bottom" constant="8" id="H6y-aK-iYS"/>
-                        <constraint firstAttribute="trailing" secondItem="3X6-bA-Ldo" secondAttribute="trailing" constant="8" id="JBZ-z7-tIF"/>
-                        <constraint firstAttribute="trailing" secondItem="UBm-fb-YC3" secondAttribute="trailing" constant="8" id="JgS-UJ-DbI"/>
-                        <constraint firstItem="UBm-fb-YC3" firstAttribute="leading" secondItem="6LX-Tj-ajf" secondAttribute="leading" constant="8" id="VFc-q4-PSF"/>
-                        <constraint firstItem="3X6-bA-Ldo" firstAttribute="leading" secondItem="6LX-Tj-ajf" secondAttribute="leading" constant="8" id="ZxE-v9-apR"/>
-                        <constraint firstAttribute="trailing" secondItem="L4H-SM-v7T" secondAttribute="trailing" constant="8" id="egG-sb-dPg"/>
-                        <constraint firstAttribute="trailing" secondItem="Dms-65-eyl" secondAttribute="trailing" constant="8" id="yUM-Vr-e3M"/>
-                    </constraints>
-                </view>
+                </stackView>
                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="PoA-mP-JeY">
                     <rect key="frame" x="360" y="52" width="46" height="30"/>
                     <state key="normal" title="Button"/>
@@ -79,11 +60,11 @@
             </subviews>
             <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
             <constraints>
-                <constraint firstItem="6LX-Tj-ajf" firstAttribute="centerY" secondItem="fnl-2z-Ty3" secondAttribute="centerY" id="9vB-TO-kO2"/>
+                <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="8tZ-Yh-NIT" secondAttribute="trailing" constant="80" id="6Za-yM-1uX"/>
+                <constraint firstItem="8tZ-Yh-NIT" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" constant="80" id="BS5-P5-zDx"/>
                 <constraint firstItem="PoA-mP-JeY" firstAttribute="top" secondItem="fnl-2z-Ty3" secondAttribute="top" constant="8" id="HNR-64-bbU"/>
                 <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="PoA-mP-JeY" secondAttribute="trailing" constant="8" id="PuH-CN-5Pr"/>
-                <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="6LX-Tj-ajf" secondAttribute="trailing" constant="80" id="ZML-R3-1aW"/>
-                <constraint firstItem="6LX-Tj-ajf" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" constant="80" id="qVv-uC-rsn"/>
+                <constraint firstItem="8tZ-Yh-NIT" firstAttribute="centerY" secondItem="fnl-2z-Ty3" secondAttribute="centerY" id="dpT-b0-IhA"/>
             </constraints>
             <viewLayoutGuide key="safeArea" id="fnl-2z-Ty3"/>
             <point key="canvasLocation" x="47.826086956521742" y="35.491071428571423"/>

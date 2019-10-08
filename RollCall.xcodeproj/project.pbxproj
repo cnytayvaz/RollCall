@@ -46,6 +46,8 @@
 		110C294B23226E3C0015C299 /* ClassDetailViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 110C294923226E3C0015C299 /* ClassDetailViewController.xib */; };
 		110C294F23226F690015C299 /* StudentTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 110C294D23226F690015C299 /* StudentTableViewCell.swift */; };
 		110C295023226F690015C299 /* StudentTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 110C294E23226F690015C299 /* StudentTableViewCell.xib */; };
+		110C3FAD234C5BBE002DBA84 /* ChangePasswordViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 110C3FAB234C5BBE002DBA84 /* ChangePasswordViewController.swift */; };
+		110C3FAE234C5BBE002DBA84 /* ChangePasswordViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 110C3FAC234C5BBE002DBA84 /* ChangePasswordViewController.xib */; };
 		1110EAF323276B78009692E4 /* Util.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1110EAF223276B78009692E4 /* Util.swift */; };
 		1110EAF62327ACDA009692E4 /* MessagesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1110EAF42327ACDA009692E4 /* MessagesViewController.swift */; };
 		1110EAF72327ACDA009692E4 /* MessagesViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 1110EAF52327ACDA009692E4 /* MessagesViewController.xib */; };
@@ -103,6 +105,8 @@
 		110C294923226E3C0015C299 /* ClassDetailViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ClassDetailViewController.xib; sourceTree = "<group>"; };
 		110C294D23226F690015C299 /* StudentTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StudentTableViewCell.swift; sourceTree = "<group>"; };
 		110C294E23226F690015C299 /* StudentTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = StudentTableViewCell.xib; sourceTree = "<group>"; };
+		110C3FAB234C5BBE002DBA84 /* ChangePasswordViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChangePasswordViewController.swift; sourceTree = "<group>"; };
+		110C3FAC234C5BBE002DBA84 /* ChangePasswordViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ChangePasswordViewController.xib; sourceTree = "<group>"; };
 		1110EAF223276B78009692E4 /* Util.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Util.swift; sourceTree = "<group>"; };
 		1110EAF42327ACDA009692E4 /* MessagesViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MessagesViewController.swift; sourceTree = "<group>"; };
 		1110EAF52327ACDA009692E4 /* MessagesViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = MessagesViewController.xib; sourceTree = "<group>"; };
@@ -146,6 +150,7 @@
 				110274B52328D38F00BDD829 /* SelectSchool */,
 				11F02921232BADE6004461F9 /* Teachers */,
 				11073BAA233394E400F6C3F6 /* Settings */,
+				110C3FAF234C5BC2002DBA84 /* ChangePassword */,
 			);
 			path = ViewController;
 			sourceTree = "<group>";
@@ -322,6 +327,15 @@
 			path = ClassDetail;
 			sourceTree = "<group>";
 		};
+		110C3FAF234C5BC2002DBA84 /* ChangePassword */ = {
+			isa = PBXGroup;
+			children = (
+				110C3FAB234C5BBE002DBA84 /* ChangePasswordViewController.swift */,
+				110C3FAC234C5BBE002DBA84 /* ChangePasswordViewController.xib */,
+			);
+			path = ChangePassword;
+			sourceTree = "<group>";
+		};
 		1110EAF82327ACDF009692E4 /* Messages */ = {
 			isa = PBXGroup;
 			children = (
@@ -435,6 +449,7 @@
 			files = (
 				11F02925232BAE04004461F9 /* TeacherTableViewCell.xib in Resources */,
 				11073BA92333939D00F6C3F6 /* SettingsViewController.xib in Resources */,
+				110C3FAE234C5BBE002DBA84 /* ChangePasswordViewController.xib in Resources */,
 				110C292B232225C90015C299 /* Localizable.strings in Resources */,
 				110C294723224F230015C299 /* ClassCollectionViewCell.xib in Resources */,
 				11F02920232BADE1004461F9 /* TeachersViewController.xib in Resources */,
@@ -513,6 +528,7 @@
 				110C294A23226E3C0015C299 /* ClassDetailViewController.swift in Sources */,
 				1110EAFF2327CD7D009692E4 /* HomeViewController.swift in Sources */,
 				110274C02328DD7800BDD829 /* UserManager.swift in Sources */,
+				110C3FAD234C5BBE002DBA84 /* ChangePasswordViewController.swift in Sources */,
 				11053C592320EA0F00D62C03 /* ServiceEndPoint.swift in Sources */,
 				11073BAD2333955C00F6C3F6 /* SettingsTableViewCell.swift in Sources */,
 				110C293523222BA70015C299 /* ExtensionUIView.swift in Sources */,
