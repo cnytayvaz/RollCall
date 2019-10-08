@@ -7,11 +7,17 @@
 //
 
 import UIKit
-import CircleMenu
 
 class HomeViewController: BaseViewController {
 
-    var buttons: [(icon: String, color: UIColor, pageId: Int)] = []
+    @IBOutlet weak var titleLabel: UILabel!
+    @IBOutlet weak var usernameLabel: UILabel!
+    @IBOutlet weak var collectionView: UICollectionView!
+    
+    let ROW_ITEM_COUNT = 4
+    let ITEM_SPACE = 3
+    
+    var menuItems: [(pageId: Int, description: String, iconName: String, color: UIColor)] = []
     let GROUP_MESSAGE = 0
     let PERSONAL_MESSAGE = 1
     let ROLL_CALL = 2
@@ -24,27 +30,21 @@ class HomeViewController: BaseViewController {
         
         switch userType {
         case .admin:
-            buttons = [("personal-message", UIColor.rollCallButton, PERSONAL_MESSAGE),
-                       ("group-message", UIColor.messageButton, GROUP_MESSAGE),
-                       ("roll-call", UIColor.groupMessageButton, ROLL_CALL),
-                       ("settings", UIColor.messageButton, SETTINGS)]
+            menuItems = [(PERSONAL_MESSAGE, "Bireysel Mesaj".localized(), "personal-message", UIColor.rollCall),
+                       (GROUP_MESSAGE, "Sınıf Mesajı".localized(), "group-message", UIColor.message),
+                       (ROLL_CALL, "Yoklama".localized(), "roll-call", UIColor.groupMessage),
+                       (SETTINGS, "Ayarlar".localized(), "settings", UIColor.settings)]
+            
         case .teacher:
             break
         case .parent:
             break
         }
-
-        // Do any additional setup after loading the view.
-        let button = CircleMenu(
-            frame: CGRect(x: view.frame.width / 2 - 25, y: view.frame.height / 2 - 25, width: 50, height: 50),
-            normalIcon: "logo",
-            selectedIcon: nil,
-            buttonsCount: buttons.count,
-            duration: 1,
-            distance: 120)
-        button.delegate = self
-        button.layer.cornerRadius = button.frame.size.width / 2.0
-        view.addSubview(button)
+        
+        collectionView.register(MenuCollectionViewCell.nib, forCellWithReuseIdentifier: MenuCollectionViewCell.identifier)
+        collectionView.delegate = self
+        collectionView.dataSource = self
+        
     }
     
     override func isBackActionEnabled() -> Bool {
@@ -54,22 +54,22 @@ class HomeViewController: BaseViewController {
     override func isNavigationBarHidden() -> Bool {
         return true
     }
+    
+    override func setText() {
+        titleLabel.text = "Merhaba,".localized()
+        usernameLabel.text = "Cüneyt AYVAZ".localized()
+    }
+    
+    func findArrayIndex(_ indexPath: IndexPath) -> Int {
+        return (indexPath.section * ROW_ITEM_COUNT) + indexPath.row
+    }
 
 }
 
-extension HomeViewController: CircleMenuDelegate {
+extension HomeViewController: UICollectionViewDelegate, UICollectionViewDataSource, UICollectionViewDelegateFlowLayout {
     
-    // configure buttons
-    func circleMenu(_ circleMenu: CircleMenu, willDisplay button: UIButton, atIndex: Int) {
-        button.backgroundColor = buttons[atIndex].color
-        button.setImage(UIImage(named: buttons[atIndex].icon), for: .normal)
-    }
-    
-    // call before animation
-    func circleMenu(_ circleMenu: CircleMenu, buttonWillSelected button: UIButton, atIndex: Int) {
-        
-        let pageId = buttons[atIndex].pageId
-        switch pageId {
+    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+        switch menuItems[indexPath.row].pageId {
         case PERSONAL_MESSAGE:
             pushViewController(viewController: MessagesViewController())
         case GROUP_MESSAGE:
@@ -83,19 +83,32 @@ extension HomeViewController: CircleMenuDelegate {
         }
     }
     
-    // call after animation
-    func circleMenu(_ circleMenu: CircleMenu, buttonDidSelected button: UIButton, atIndex: Int) {
-        
+    func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
+        return menuItems.count
     }
     
-    // call upon cancel of the menu - fires immediately on button press
-    func menuCollapsed(_ circleMenu: CircleMenu) {
-        
+    func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
+        let index = findArrayIndex(indexPath)
+        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: MenuCollectionViewCell.identifier, for: indexPath) as! MenuCollectionViewCell
+        cell.configure(with: menuItems[index])
+        return cell
     }
     
-    // call upon opening of the menu - fires immediately on button press
-    func menuOpened(_ circleMenu: CircleMenu) {
-        
+    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, insetForSectionAt section: Int) -> UIEdgeInsets {
+        return UIEdgeInsets(top: 0, left: 0, bottom: 0, right: 0)
+    }
+    
+    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
+        return CGSize(width: ((collectionView.frame.size.width - CGFloat(integerLiteral: ((ROW_ITEM_COUNT - 1) * ITEM_SPACE))) / CGFloat(integerLiteral: ROW_ITEM_COUNT)),
+                      height: ((collectionView.frame.size.width - CGFloat(integerLiteral: ((ROW_ITEM_COUNT - 1) * ITEM_SPACE))) / CGFloat(integerLiteral: ROW_ITEM_COUNT)))
+    }
+    
+    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, minimumInteritemSpacingForSectionAt section: Int) -> CGFloat {
+        return CGFloat(integerLiteral: ITEM_SPACE)
+    }
+    
+    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, minimumLineSpacingForSectionAt section: Int) -> CGFloat {
+        return CGFloat(integerLiteral: ITEM_SPACE)
     }
     
 }

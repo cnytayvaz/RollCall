@@ -48,6 +48,10 @@
 		110C295023226F690015C299 /* StudentTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 110C294E23226F690015C299 /* StudentTableViewCell.xib */; };
 		110C3FAD234C5BBE002DBA84 /* ChangePasswordViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 110C3FAB234C5BBE002DBA84 /* ChangePasswordViewController.swift */; };
 		110C3FAE234C5BBE002DBA84 /* ChangePasswordViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 110C3FAC234C5BBE002DBA84 /* ChangePasswordViewController.xib */; };
+		110C3FB2234C6926002DBA84 /* MenuCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 110C3FB0234C6926002DBA84 /* MenuCollectionViewCell.swift */; };
+		110C3FB3234C6926002DBA84 /* MenuCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 110C3FB1234C6926002DBA84 /* MenuCollectionViewCell.xib */; };
+		110C3FB5234C6990002DBA84 /* ExtensionUICollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 110C3FB4234C6990002DBA84 /* ExtensionUICollectionViewCell.swift */; };
+		110C3FB7234C6A4E002DBA84 /* ExtensionUITableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 110C3FB6234C6A4E002DBA84 /* ExtensionUITableViewCell.swift */; };
 		1110EAF323276B78009692E4 /* Util.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1110EAF223276B78009692E4 /* Util.swift */; };
 		1110EAF62327ACDA009692E4 /* MessagesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1110EAF42327ACDA009692E4 /* MessagesViewController.swift */; };
 		1110EAF72327ACDA009692E4 /* MessagesViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 1110EAF52327ACDA009692E4 /* MessagesViewController.xib */; };
@@ -107,6 +111,10 @@
 		110C294E23226F690015C299 /* StudentTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = StudentTableViewCell.xib; sourceTree = "<group>"; };
 		110C3FAB234C5BBE002DBA84 /* ChangePasswordViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChangePasswordViewController.swift; sourceTree = "<group>"; };
 		110C3FAC234C5BBE002DBA84 /* ChangePasswordViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ChangePasswordViewController.xib; sourceTree = "<group>"; };
+		110C3FB0234C6926002DBA84 /* MenuCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MenuCollectionViewCell.swift; sourceTree = "<group>"; };
+		110C3FB1234C6926002DBA84 /* MenuCollectionViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = MenuCollectionViewCell.xib; sourceTree = "<group>"; };
+		110C3FB4234C6990002DBA84 /* ExtensionUICollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExtensionUICollectionViewCell.swift; sourceTree = "<group>"; };
+		110C3FB6234C6A4E002DBA84 /* ExtensionUITableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExtensionUITableViewCell.swift; sourceTree = "<group>"; };
 		1110EAF223276B78009692E4 /* Util.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Util.swift; sourceTree = "<group>"; };
 		1110EAF42327ACDA009692E4 /* MessagesViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MessagesViewController.swift; sourceTree = "<group>"; };
 		1110EAF52327ACDA009692E4 /* MessagesViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = MessagesViewController.xib; sourceTree = "<group>"; };
@@ -253,6 +261,8 @@
 				110C293C23222F510015C299 /* ExtensionUIColor.swift */,
 				110C293423222BA70015C299 /* ExtensionUIView.swift */,
 				11053C522320E8C800D62C03 /* ExtensionUIViewController.swift */,
+				110C3FB4234C6990002DBA84 /* ExtensionUICollectionViewCell.swift */,
+				110C3FB6234C6A4E002DBA84 /* ExtensionUITableViewCell.swift */,
 			);
 			path = Extension;
 			sourceTree = "<group>";
@@ -352,6 +362,8 @@
 			children = (
 				1110EAFD2327CD7C009692E4 /* HomeViewController.swift */,
 				1110EAFE2327CD7C009692E4 /* HomeViewController.xib */,
+				110C3FB0234C6926002DBA84 /* MenuCollectionViewCell.swift */,
+				110C3FB1234C6926002DBA84 /* MenuCollectionViewCell.xib */,
 			);
 			path = Home;
 			sourceTree = "<group>";
@@ -454,6 +466,7 @@
 				110C294723224F230015C299 /* ClassCollectionViewCell.xib in Resources */,
 				11F02920232BADE1004461F9 /* TeachersViewController.xib in Resources */,
 				11073BAE2333955C00F6C3F6 /* SettingsTableViewCell.xib in Resources */,
+				110C3FB3234C6926002DBA84 /* MenuCollectionViewCell.xib in Resources */,
 				110274B92328D4B700BDD829 /* SchoolTableViewCell.xib in Resources */,
 				110274AF2328D26100BDD829 /* check-animation.json in Resources */,
 				1110EAF72327ACDA009692E4 /* MessagesViewController.xib in Resources */,
@@ -535,6 +548,8 @@
 				110274AB2328CF9E00BDD829 /* SuccessfulViewController.swift in Sources */,
 				11053C572320E9FA00D62C03 /* NetworkManager.swift in Sources */,
 				110C293D23222F510015C299 /* ExtensionUIColor.swift in Sources */,
+				110C3FB5234C6990002DBA84 /* ExtensionUICollectionViewCell.swift in Sources */,
+				110C3FB7234C6A4E002DBA84 /* ExtensionUITableViewCell.swift in Sources */,
 				110C294623224F230015C299 /* ClassCollectionViewCell.swift in Sources */,
 				11053C552320E9AD00D62C03 /* Constants.swift in Sources */,
 				11053C532320E8C800D62C03 /* ExtensionUIViewController.swift in Sources */,
@@ -548,6 +563,7 @@
 				110C293B23222F0D0015C299 /* TabBarController.swift in Sources */,
 				110C2941232249F70015C299 /* ClassesViewController.swift in Sources */,
 				110274BC2328DBE700BDD829 /* UserType.swift in Sources */,
+				110C3FB2234C6926002DBA84 /* MenuCollectionViewCell.swift in Sources */,
 				11053C3F2320E59400D62C03 /* AppDelegate.swift in Sources */,
 				110C294F23226F690015C299 /* StudentTableViewCell.swift in Sources */,
 				11053C512320E86700D62C03 /* ExtensionUIApplication.swift in Sources */,

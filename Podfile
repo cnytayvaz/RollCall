@@ -11,7 +11,6 @@ target 'RollCall' do
   pod 'AlamofireObjectMapper'
   pod 'ObjectMapper'
   pod 'ReachabilitySwift'
-  pod 'CircleMenu'
   pod 'lottie-ios'
 
 end

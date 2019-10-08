@@ -9,9 +9,6 @@
 import UIKit
 
 class MessageTableViewCell: UITableViewCell {
-
-    class var identifier: String { return String(describing: self) }
-    class var nib: UINib { return UINib(nibName: identifier, bundle: nil) }
     
     @IBOutlet weak var readIconImageView: UIImageView!
     @IBOutlet weak var senderLabel: UILabel!
