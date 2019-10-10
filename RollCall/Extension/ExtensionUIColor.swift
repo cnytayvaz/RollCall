@@ -11,11 +11,10 @@ import UIKit
 extension UIColor {
     
     // homeViewController
-    class var rollCall: UIColor { return UIColor(hexString: "e85c10") }
-    class var message: UIColor { return UIColor(hexString: "96c816") }
-    class var groupMessage: UIColor { return UIColor(hexString: "029fe2") }
-    class var settings: UIColor { return UIColor(hexString: "029fe2") }
-    
+    class var personalMessage: UIColor { return UIColor(hexString: "66bb6a") }
+    class var classMessage: UIColor { return UIColor(hexString: "42a5f5") }
+    class var rollCall: UIColor { return UIColor(hexString: "ef5350") }
+    class var settings: UIColor { return UIColor(hexString: "ffa726") }
     
     convenience init(hexString: String) {
         let hex = hexString.trimmingCharacters(in: CharacterSet.alphanumerics.inverted)

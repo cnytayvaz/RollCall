@@ -30,9 +30,9 @@ class HomeViewController: BaseViewController {
         
         switch userType {
         case .admin:
-            menuItems = [(PERSONAL_MESSAGE, "Bireysel Mesaj".localized(), "personal-message", UIColor.rollCall),
-                       (GROUP_MESSAGE, "Sınıf Mesajı".localized(), "group-message", UIColor.message),
-                       (ROLL_CALL, "Yoklama".localized(), "roll-call", UIColor.groupMessage),
+            menuItems = [(PERSONAL_MESSAGE, "Bireysel Mesaj".localized(), "personal-message", UIColor.personalMessage),
+                       (GROUP_MESSAGE, "Sınıf Mesajı".localized(), "group-message", UIColor.classMessage),
+                       (ROLL_CALL, "Yoklama".localized(), "roll-call", UIColor.rollCall),
                        (SETTINGS, "Ayarlar".localized(), "settings", UIColor.settings)]
             
         case .teacher:
@@ -71,7 +71,7 @@ extension HomeViewController: UICollectionViewDelegate, UICollectionViewDataSour
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
         switch menuItems[indexPath.row].pageId {
         case PERSONAL_MESSAGE:
-            pushViewController(viewController: MessagesViewController())
+            pushViewController(viewController: ClassesViewController())
         case GROUP_MESSAGE:
             pushViewController(viewController: MessagesViewController())
         case ROLL_CALL:
