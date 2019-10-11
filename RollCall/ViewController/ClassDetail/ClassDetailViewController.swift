@@ -105,6 +105,7 @@ class ClassDetailViewController: BaseViewController {
         searchController.searchResultsUpdater = self
         searchController.obscuresBackgroundDuringPresentation = false
         navigationItem.searchController = searchController
+        navigationItem.hidesSearchBarWhenScrolling = false
         
         tableView.register(StudentTableViewCell.nib, forCellReuseIdentifier: StudentTableViewCell.identifier)
         tableView.delegate = self
